@@ -7,12 +7,12 @@ class Label:
 		self._readers = readers
 		self._writers = writers
 
-	def _getOwner(self):
+	def getOwner(self):
 		return self._owner
 
-	def _getReaders(self):
+	def getReaders(self):
 		return self._readers
 
-	def _getWriters(self):
+	def getWriters(self):
 		return self._writers
 

@@ -1,6 +1,6 @@
 class CreateAST:
 	'''Class that holds methods to create an Abstract Syntax Tree
-	of a python program passed as an argument'''
+	of a python program passed as an argument by input.xml file'''
 	def reset(self,x,y):
 		pass
 a = CreateAST()
