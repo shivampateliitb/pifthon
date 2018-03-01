@@ -3,6 +3,7 @@ class CreateAST:
 	of a python program passed as an argument by input.xml file'''
 	def reset(self,x,y):
 		pass
+	
 a = CreateAST()
 a.reset(5,4)
 

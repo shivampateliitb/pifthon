@@ -1,27 +1,31 @@
-<?xml version="1.0"?>
 <input>
-    <model name="rwfm">
-        <package>rwfm</package>
-        <label file="Label">
-            <functions>
-            <owner>getOwner<owner>
-            <reader>getReaders<readers>
-            <writers>getWriters<writers>
-            <functions>
-        </label>
-        <lattice file="LatticeOperations">
-            <functions>
-            <lub>LUB</lub>
-            <glb>GLB</glb>
-            </functions>
-        </lattice>
-        <checkflow file="CheckFlow">
+    <model>
+    <package>rwfm</package>
+    
+    <label file="Label">
         <functions>
-            <canflow>CanFlow</canflow>
+            <owner>getOwner</owner>
+            <reader>getReader</reader>
+            <writer>getWriter</writer>
+        </functions>
+    </label>
+    
+    <lattice file="LatticeOperations">
         <functions>
-        </checkflow>
-        <program>
-        <name></name>
-        </program>
+        <lub>LUB</lub>
+        <glb>GLB</glb>
+        </functions>
+    </lattice>
+    
+    <checkflow file="CheckFlow">
+        <functions>
+        <canflow>CanFlow</canflow>
+        </functions>
+    </checkflow>
+    
     </model>
+    
+    <programs>
+    <name>Test</name>
+    </programs>
 </input>
