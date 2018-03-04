@@ -15,4 +15,7 @@ class Label:
 
 	def getWriters(self):
 		return self._writers
-
+	
+	def printLabel(self):
+		lbl = str(self.getOwner()) + ',' + str(self.getReaders()) + ',' + str(self.getWriters())
+		return lbl

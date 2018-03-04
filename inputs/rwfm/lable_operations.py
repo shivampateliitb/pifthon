@@ -1,5 +1,5 @@
 
-def LUB(label_1, label_2):
+def join(label_1, label_2):
 	'''Derives the Least Upper Bound of two labels and returns 
 	the new label'''
 	_readers = list(set(label_1.getReaders()) & set(label_2.getReaders()))
@@ -8,7 +8,7 @@ def LUB(label_1, label_2):
 	return _readers, _writers
 
 			
-def GLB(label_1, label_2):
+def meet(label_1, label_2):
 	'''Derives the Greatest Lower Bound of two labels and returns 
 	the new label'''
 	_readers = list(set(label_1.getReaders()) | set(label_2.getReaders()))

@@ -1,0 +1,44 @@
+Module(
+	body=[
+		Assign(
+			targets=[Name(id='a', ctx=Store())], value=Str(s='hello')
+		), 
+		Assign(
+			targets=[Name(id='b', ctx=Store())], value=Str(s='world')
+		), 
+		Assign(
+			targets=[Name(id='c', ctx=Store())], value=BinOp(left=Name(id='a', ctx=Load()), op=Add(), right=Name(id='b', ctx=Load()))
+		)
+	]
+)
+
+a=0
+if a<1:
+    b=2
+else:
+    b=3
+
+Module(
+	body=[
+		Assign(
+			targets=[Name(id='a', ctx=Store())], value=Num(n=0)
+		), 
+		If(
+			test=Compare(left=Name(id='a', ctx=Load()), ops=[Lt()], comparators=[Num(n=1)]), 
+				body=[
+					Assign(targets=[Name(id='b', ctx=Store())], value=Num(n=2))
+					], 
+					orelse=[
+					Assign(targets=[Name(id='b', ctx=Store())], value=Num(n=3))
+					]
+		)
+	]
+)
+<_ast.Module object at 0x7f303f49dba8>
+[<_ast.Assign object at 0x7f303f49db38>, <_ast.If object at 0x7f303f49dc50>]
+Name(id='a', ctx=Store())
+Num(n=0)
+Compare(left=Name(id='a', ctx=Load()), ops=[Lt()], comparators=[Num(n=1)])
+Assign(targets=[Name(id='b', ctx=Store())], value=Num(n=2))
+Assign(targets=[Name(id='b', ctx=Store())], value=Num(n=3))
+

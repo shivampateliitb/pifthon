@@ -1,1 +1,48 @@
 
+INFO:root:Parsing input.xml started
+DEBUG:root:input program = inputs/test.py
+DEBUG:root:package = inputs.rwfm
+DEBUG:root:highest achievable label by the execution subject = A,['A', 'B'],['A']
+INFO:root:Parsing input.xml completed
+INFO:root:Parsing input.xml started
+DEBUG:root:input program = inputs/test.py
+DEBUG:root:package = inputs.rwfm
+DEBUG:root:highest achievable label by the execution subject = A,['A', 'B'],['A']
+INFO:root:Parsing input.xml completed
+INFO:root:Parsing input.xml started
+DEBUG:root:input program = inputs/test.py
+DEBUG:root:package = inputs.rwfm
+DEBUG:root:highest achievable label by the execution subject = A,['A', 'B'],['A']
+INFO:root:Parsing input.xml completed
+INFO:root:Parsing input.xml started
+DEBUG:root:input program = inputs/test.py
+DEBUG:root:package = inputs.rwfm
+DEBUG:root:highest achievable label by the execution subject = A,['A', 'B'],['A']
+INFO:root:Parsing input.xml completed
+INFO:root:Parsing input.xml started
+DEBUG:root:input program = inputs/test.py
+DEBUG:root:package = inputs.rwfm
+DEBUG:root:highest achievable label by the execution subject = A,['A', 'B'],['A']
+INFO:root:Parsing input.xml completed
+INFO:root:Parsing input.xml started
+DEBUG:root:input program = inputs/test.py
+DEBUG:root:package = inputs.rwfm
+DEBUG:root:highest achievable label by the execution subject = A,['A', 'B'],['A']
+INFO:root:Parsing input.xml completed
+INFO:root:Parsing input.xml started
+DEBUG:root:input program = inputs/test.py
+DEBUG:root:package = inputs.rwfm
+DEBUG:root:highest achievable label by the execution subject = A,['A', 'B'],['A']
+INFO:root:Parsing input.xml completed
+INFO:root:Parsing input.xml started
+DEBUG:root:input program = inputs/test.py
+DEBUG:root:package = inputs.rwfm
+DEBUG:root:highest achievable label by the execution subject = A,['A', 'B'],['A']
+INFO:root:Parsing input.xml completed
+INFO:root:Program completed
+INFO:root:Parsing input.xml started
+DEBUG:root:input program = inputs/test.py
+DEBUG:root:package = inputs.rwfm
+DEBUG:root:highest achievable label by the execution subject = A,['A', 'B'],['A']
+INFO:root:Parsing input.xml completed
+INFO:root:Program completed
