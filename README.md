@@ -5,6 +5,6 @@ Inputs:
 
 A file containing source code (a .py file)  
 List of global variables and their labels.  
-The LUB function.  
+The join and meet function.  
 The function that checks if a flow is permitted.  
 The highest label the invoking subject can access.  

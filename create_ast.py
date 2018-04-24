@@ -5,7 +5,6 @@ global tree
 	
 def CreateAST(program_name):
 	'''Method that receives a python program and create an AST of the program''' 
-	
 	#Parse the program
 	tree = ast.parse(open(program_name).read())
 	

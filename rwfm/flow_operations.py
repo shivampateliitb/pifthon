@@ -8,3 +8,7 @@ def CanFlow(from_label, to_label):
 		return True
 	else:
 		return False
+	
+def Downgrade(subject_label, owner, object_label, principals):
+	'''Downgrade function declassifies the label of an object and return the declassified''' 
+	pass

@@ -1,0 +1,35 @@
+{
+    "source_file": {
+        "name": "test.py",
+        "subject_label": {
+            "owner" : "A",
+            "readers": [
+                {"id":"A"},
+                {"id":"B"}
+                ],
+            "writers": [
+                {"id": "A"}
+                ]
+        },
+        
+        "functions":[
+            {
+                "name" : "",
+                "subject_label": {
+                    "owner" : "",
+                    "readers": "",
+                    "writers": ""
+                }
+            },
+            
+            {   
+                "name" : "",
+                "subject_label": {
+                    "owner" : "",
+                    "readers": "",
+                    "writers": ""
+                }
+            }
+        ]
+    }
+}

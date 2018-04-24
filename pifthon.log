@@ -1,48 +1,23 @@
-
 INFO:root:Parsing input.xml started
-DEBUG:root:input program = inputs/test.py
-DEBUG:root:package = inputs.rwfm
-DEBUG:root:highest achievable label by the execution subject = A,['A', 'B'],['A']
-INFO:root:Parsing input.xml completed
+DEBUG:root:program file name:test
+INFO:root:Parsing input.json is completed
 INFO:root:Parsing input.xml started
-DEBUG:root:input program = inputs/test.py
-DEBUG:root:package = inputs.rwfm
-DEBUG:root:highest achievable label by the execution subject = A,['A', 'B'],['A']
-INFO:root:Parsing input.xml completed
+DEBUG:root:program file name:test
+INFO:root:Parsing input.json is completed
 INFO:root:Parsing input.xml started
-DEBUG:root:input program = inputs/test.py
-DEBUG:root:package = inputs.rwfm
-DEBUG:root:highest achievable label by the execution subject = A,['A', 'B'],['A']
-INFO:root:Parsing input.xml completed
+DEBUG:root:program file name:test.py
+INFO:root:Parsing input.json is completed
 INFO:root:Parsing input.xml started
-DEBUG:root:input program = inputs/test.py
-DEBUG:root:package = inputs.rwfm
-DEBUG:root:highest achievable label by the execution subject = A,['A', 'B'],['A']
-INFO:root:Parsing input.xml completed
-INFO:root:Parsing input.xml started
-DEBUG:root:input program = inputs/test.py
-DEBUG:root:package = inputs.rwfm
-DEBUG:root:highest achievable label by the execution subject = A,['A', 'B'],['A']
-INFO:root:Parsing input.xml completed
-INFO:root:Parsing input.xml started
-DEBUG:root:input program = inputs/test.py
-DEBUG:root:package = inputs.rwfm
-DEBUG:root:highest achievable label by the execution subject = A,['A', 'B'],['A']
-INFO:root:Parsing input.xml completed
-INFO:root:Parsing input.xml started
-DEBUG:root:input program = inputs/test.py
-DEBUG:root:package = inputs.rwfm
-DEBUG:root:highest achievable label by the execution subject = A,['A', 'B'],['A']
-INFO:root:Parsing input.xml completed
-INFO:root:Parsing input.xml started
-DEBUG:root:input program = inputs/test.py
-DEBUG:root:package = inputs.rwfm
-DEBUG:root:highest achievable label by the execution subject = A,['A', 'B'],['A']
-INFO:root:Parsing input.xml completed
+DEBUG:root:program file name:inputs/test.py
+INFO:root:Parsing input.json is completed
 INFO:root:Program completed
 INFO:root:Parsing input.xml started
-DEBUG:root:input program = inputs/test.py
-DEBUG:root:package = inputs.rwfm
-DEBUG:root:highest achievable label by the execution subject = A,['A', 'B'],['A']
-INFO:root:Parsing input.xml completed
+DEBUG:root:program file name:inputs/test.py
+INFO:root:Parsing input.json is completed
+INFO:root:Program completed
+INFO:root:Parsing input.xml started
+INFO:root:Parsing input.xml started
+INFO:root:Parsing input.xml started
+DEBUG:root:program file name:inputs/test.py
+INFO:root:Parsing input.json is completed
 INFO:root:Program completed

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+		<item value="/home/sandip/Dropbox/python/pifthon"/>
 		<item value="/home/sandip/Dropbox/python/PIFthon"/>
 	</list>
 	<list key="installedFeatures">
@@ -15,6 +16,17 @@
 		<item value="org.eclipse.rcp:4.7.2.v20171123-0800"/>
 		<item value="org.python.pydev.feature:6.2.0.201711281546"/>
 	</list>
+	<section name="ExternalProjectImportWizard">
+		<item value="false" key="WizardProjectsImportPage.STORE_NESTED_PROJECTS"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
+		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="/home/sandip/Dropbox/python/pifthon"/>
+		</list>
+		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value=""/>
+		</list>
+	</section>
 	<section name="NewWizardAction">
 	</section>
 </section>
