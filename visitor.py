@@ -6,22 +6,22 @@ class Visitor(ast.NodeVisitor):
     AST dump''' 
     global _file_object
     
-    def __init__(self, file_name):
+    def __init__(self, file):
         '''Method accepts the file name as argument and open the file while initializing class object'''
-        self._file_object = open(file_name,'w')
+        self._file_object = file
               
     def generic_visit(self, node):
-        self._file_object.write(type(node).__name__ + '\n')
+        self._file_object.write(type(node).__name__ + "\n")
         super().generic_visit(node)
 
     def visit_Name(self, node):
-        self._file_object.write('name:'+ node.id + '\n')
+        self._file_object.write('name:'+ node.id + "\n")
          
     def visit_Num(self, node):
-        self._file_object.write('num:'+ str(node.__dict__['n'])+ '\n')
+        self._file_object.write('num:'+ str(node.__dict__['n']) + "\n")
          
     def visit_Str(self, node):
-        self._file_object.write('str:'+ node.s+ '\n')
+        self._file_object.write('str:'+ node.s + "\n")
         
 # import contextlib
 # with contextlib.closing(Visitor('ast.dump')) as program:

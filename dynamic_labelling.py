@@ -2,17 +2,19 @@ from rwfm import *
 import label_function
 
 class DynamicLabelling:
-    global _lblfunction
     
     def __init__(self):
-        self._lblfunction = label_function.LabelFunction()
+        self._lblfunction = label_function.LabelFunctions()
     
         
-    def labelling(self, filename, highest_label):
-        with open(filename) as file:
-            lines=file.readlines()  
-            for line in lines:
-                print(line)
+    def labelling(self, filename, clearance):
+        print(filename)
+        with open(filename,'r') as file:
+            for line in file.readlines():
+                self._lblfunction = self.DL(line, clearance. self._lblfunction)
         
-    def DL(self, line, highest_label):
-        pass
+        
+    def DL(self, line, clearance, label_function):
+        if 'Assign\n' == line:
+            
+            

@@ -1,12 +1,12 @@
-from inputs.rwfm import label
+from rwfm.Label import Label
 
-class LabelFunction:
+class LabelFunctions:
     global _local
     global _global
     global _pc
     
     def __init__(self):
-        self._pc = label.Label('PC',['*'],[])
+        self._pc = Label('PC',['*'],[])
         
     def updateLocal(self, id, label_object):
         self._local[id]=label_object
