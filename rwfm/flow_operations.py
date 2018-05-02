@@ -15,7 +15,8 @@ def canFlow(from_label, to_label):
 	
 	
 def downgrade(subject_label, owner, object_label, principals):
-	'''Downgrade function declassifies the label of an object and return the declassified''' 
+	'''Downgrade function declassifies the label of an object and return the declassified label and a boolean
+	value indicating a successful downgrading''' 
 	# If owner of the subject label executing the operation is same as "owner" then
 	if subject_label.getOwner() == owner:
 		#If the set principals is a subset of writers set of object_label or If owner is the sole writer 
