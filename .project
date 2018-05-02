@@ -14,4 +14,11 @@
 	<natures>
 		<nature>org.python.pydev.pythonNature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>pifthon</name>
+			<type>2</type>
+			<location>/home/sandip/Dropbox/python/pifthon</location>
+		</link>
+	</linkedResources>
 </projectDescription>

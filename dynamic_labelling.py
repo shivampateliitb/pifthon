@@ -12,9 +12,8 @@ class DynamicLabelling:
         with open(filename,'r') as file:
             for line in file.readlines():
                 self._lblfunction = self.DL(line, clearance. self._lblfunction)
-        
+                
         
     def DL(self, line, clearance, label_function):
-        if 'Assign\n' == line:
-            
-            
+        if line == 'Assign\n':
+            pass

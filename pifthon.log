@@ -213,3 +213,11 @@ c : A,['A', 'B'],['A']
 
 INFO:root:Parsing input.json is completed
 INFO:root:Program completed
+INFO:root:Parsing input.json started
+DEBUG:root:program file name:inputs/test.py
+DEBUG:root:highest achievable label by the executing subject = A,['A', 'B'],['A']
+DEBUG:root:given labels of variables are 
+a : A,['A', 'B'],['A']
+c : A,['A', 'B'],['A']
+
+INFO:root:Parsing input.json is completed
