@@ -26,6 +26,7 @@ def main():
     global_vars = parse_input_file.parseGlobals('inputs/input.json')
     logging.debug('given labels of variables are \n'+ parse_input_file.printGlobals(global_vars))
     
+    
     logging.info('Parsing input.json is completed')
     
     #A abstract syntax tree (AST) named tree is created and populated with the AST of the given program
@@ -40,11 +41,23 @@ def main():
         v=Visitor(file)
         v.visit(tree)
     
+    # create an object of DynamicLabelling class
     dynlabelling = DynamicLabelling()
     
+    # obtain the labelling function from the created object
+    lbl_function = dynlabelling.getFunction()
+    
+    # initialize the global dictionary of the labelling function
+    for key in global_vars.keys():
+        lbl_function.updateGlobal(key, global_vars[key])
+    
+    print(dynlabelling.getFunction().printGlobals())
+    
+    # Call the labelling function of DynamicLabelling class    
     dynlabelling.labelling('test.temp', clearance)
     
- 
+    
+    print('Program is information flow secure')
     logging.info("Program completed")
 
 

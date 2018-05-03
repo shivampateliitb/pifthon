@@ -4,9 +4,9 @@ def canFlow(from_label, to_label):
 	'''Function checks if from_label can flow to to_label and return true
 	or false either'''
 	# If readers set of from label contain * or is super set of to label then 
-	if from_label.getReaders()==['*'] or from_label.getReaders().issuperset(to_label.getReaders()):
+	if from_label.getReaders()==['*'] or set(from_label.getReaders()).issuperset(set(to_label.getReaders())):
 		# If writers set of to label contains * or is superset of from label then return true
-		if to_label.getWriters()==['*'] or to_label.getWriters().issuperset(from_label.getWriters()):
+		if to_label.getWriters()==['*'] or set(to_label.getWriters()).issuperset(set(from_label.getWriters())):
 			return True
 		else:
 			return False

@@ -6,12 +6,33 @@
             "label": {
                 "owner" : "A",
                 "readers": [
+                    {"id":"A"},
                     {"id":"B"}
                 ],
                 "writers": [
                     {"id": "A"}
                 ]
             },
+        
+            "functions":[
+                {
+                    "name" : "",
+                    "label": {
+                        "owner" : "",
+                        "readers": "",
+                        "writers": ""
+                    }
+                },
+            
+                {   
+                    "name" : "",
+                    "label": {
+                        "owner" : "",
+                        "readers": "",
+                        "writers": ""
+                    }
+                }
+            ],
             
             "global_vars": [
                 {
@@ -19,7 +40,8 @@
                     "label": {
                         "owner" : "A",
                         "readers": [
-                            {"id":"A"}
+                            {"id":"A"},
+                            {"id":"B"}
                         ],
                         "writers": [
                             {"id": "A"}
@@ -28,10 +50,11 @@
                 },
                 
                 {
-                    "id":"b",
+                    "id":"c",
                     "label": {
                         "owner" : "A",
                         "readers": [
+                            {"id":"A"},
                             {"id":"B"}
                         ],
                         "writers": [

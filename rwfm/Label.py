@@ -17,10 +17,10 @@ class Label:
 		return self._writers
 	
 	def updateReaders(self, readers):
-		self._readers.update(set(readers))
+		self._readers = list(readers)
 		
 	def updateWriters(self, writers):
-		self._writers(set(writers))
+		self._writers = list(writers)
 	
 	def printLabel(self):
 		lbl = str(self.getOwner()) + ',' + str(self.getReaders()) + ',' + str(self.getWriters())

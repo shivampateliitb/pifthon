@@ -17,6 +17,7 @@ def join(label_1, label_2):
 	# else new writers set is equal to the union of writers set of two labels
 	else:				
 		_writers = list(set(label_1.getWriters()) | set(label_2.getWriters()))
+		
 	return _readers, _writers
 
 			
