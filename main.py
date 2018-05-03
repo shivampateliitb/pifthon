@@ -32,14 +32,7 @@ def main():
     #A abstract syntax tree (AST) named tree is created and populated with the AST of the given program
     tree=create_ast.CreateAST(input_program)
     
-    #Following statement prints the AST dump into console
-    #create_ast.PrintAST(tree)
-    
-    #Following pair of commands parse the AST and write into a file called "test.temp" after nicely formatting
-    #and extracting the nodes
-    with open('test.temp','w') as file:
-        v=Visitor(file)
-        v.visit(tree)
+    create_ast.writeAST(tree, 'test.temp')
     
     # create an object of DynamicLabelling class
     dynlabelling = DynamicLabelling()
@@ -51,7 +44,6 @@ def main():
     for key in global_vars.keys():
         lbl_function.updateGlobal(key, global_vars[key])
     
-    print(dynlabelling.getFunction().printGlobals())
     
     # Call the labelling function of DynamicLabelling class    
     dynlabelling.labelling('test.temp', clearance)
