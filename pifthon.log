@@ -1,43 +1,6 @@
 INFO:root:Parsing input.json started
-INFO:root:Parsing input.json started
 DEBUG:root:program file name:inputs/test.py
-DEBUG:root:highest achievable label by the executing subject = A,['A', 'B'],['A']
-DEBUG:root:given labels of variables are 
-b : A,['B'],['A']
-a : A,['A'],['A']
-
-INFO:root:Parsing input.json is completed
-INFO:root:Program completed
-INFO:root:Parsing input.json started
-DEBUG:root:program file name:inputs/test.py
-DEBUG:root:highest achievable label by the executing subject = A,['A', 'B'],['A']
-DEBUG:root:given labels of variables are 
-b : A,['B'],['A']
-a : A,['A'],['A']
-
-INFO:root:Parsing input.json is completed
-INFO:root:Program completed
-INFO:root:Parsing input.json started
-DEBUG:root:program file name:inputs/test.py
-DEBUG:root:highest achievable label by the executing subject = A,['A', 'B'],['A']
-DEBUG:root:given labels of variables are 
-a : A,['A'],['A']
-b : A,['B'],['A']
-
-INFO:root:Parsing input.json is completed
-INFO:root:Program completed
-INFO:root:Parsing input.json started
-DEBUG:root:program file name:inputs/test.py
-DEBUG:root:highest achievable label by the executing subject = A,['A', 'B'],['A']
-DEBUG:root:given labels of variables are 
-b : A,['B'],['A']
-a : A,['A'],['A']
-
-INFO:root:Parsing input.json is completed
-INFO:root:Program completed
-INFO:root:Parsing input.json started
-DEBUG:root:program file name:inputs/test.py
-DEBUG:root:highest achievable label by the executing subject = A,['A', 'B'],['A']
+DEBUG:root:highest achievable label by the executing subject = A,['B'],['A']
 DEBUG:root:given labels of variables are 
 b : A,['B'],['A']
 a : A,['A'],['A']
@@ -45,15 +8,7 @@ a : A,['A'],['A']
 INFO:root:Parsing input.json is completed
 INFO:root:Parsing input.json started
 DEBUG:root:program file name:inputs/test.py
-DEBUG:root:highest achievable label by the executing subject = A,['A', 'B'],['A']
-DEBUG:root:given labels of variables are 
-a : A,['A'],['A']
-b : A,['B'],['A']
-
-INFO:root:Parsing input.json is completed
-INFO:root:Parsing input.json started
-DEBUG:root:program file name:inputs/test.py
-DEBUG:root:highest achievable label by the executing subject = A,['A', 'B'],['A']
+DEBUG:root:highest achievable label by the executing subject = A,['B'],['A']
 DEBUG:root:given labels of variables are 
 b : A,['B'],['A']
 a : A,['A'],['A']
@@ -61,7 +16,7 @@ a : A,['A'],['A']
 INFO:root:Parsing input.json is completed
 INFO:root:Parsing input.json started
 DEBUG:root:program file name:inputs/test.py
-DEBUG:root:highest achievable label by the executing subject = A,['A', 'B'],['A']
+DEBUG:root:highest achievable label by the executing subject = A,['B'],['A']
 DEBUG:root:given labels of variables are 
 a : A,['A'],['A']
 b : A,['B'],['A']
@@ -69,16 +24,7 @@ b : A,['B'],['A']
 INFO:root:Parsing input.json is completed
 INFO:root:Parsing input.json started
 DEBUG:root:program file name:inputs/test.py
-DEBUG:root:highest achievable label by the executing subject = A,['A', 'B'],['A']
-DEBUG:root:given labels of variables are 
-b : A,['B'],['A']
-a : A,['A'],['A']
-
-INFO:root:Parsing input.json is completed
-INFO:root:Program completed
-INFO:root:Parsing input.json started
-DEBUG:root:program file name:inputs/test.py
-DEBUG:root:highest achievable label by the executing subject = A,['A', 'B'],['A']
+DEBUG:root:highest achievable label by the executing subject = A,['B'],['A']
 DEBUG:root:given labels of variables are 
 b : A,['B'],['A']
 a : A,['A'],['A']
@@ -86,7 +32,55 @@ a : A,['A'],['A']
 INFO:root:Parsing input.json is completed
 INFO:root:Parsing input.json started
 DEBUG:root:program file name:inputs/test.py
-DEBUG:root:highest achievable label by the executing subject = A,['A', 'B'],['A']
+DEBUG:root:highest achievable label by the executing subject = A,['B'],['A']
+DEBUG:root:given labels of variables are 
+a : A,['A'],['A']
+b : A,['B'],['A']
+
+INFO:root:Parsing input.json is completed
+INFO:root:Parsing input.json started
+DEBUG:root:program file name:inputs/test.py
+DEBUG:root:highest achievable label by the executing subject = A,['B'],['A']
+DEBUG:root:given labels of variables are 
+a : A,['A'],['A']
+b : A,['B'],['A']
+
+INFO:root:Parsing input.json is completed
+INFO:root:Parsing input.json started
+DEBUG:root:program file name:inputs/test.py
+DEBUG:root:highest achievable label by the executing subject = A,['B'],['A']
+DEBUG:root:given labels of variables are 
+a : A,['A'],['A']
+b : A,['B'],['A']
+
+INFO:root:Parsing input.json is completed
+INFO:root:Parsing input.json started
+DEBUG:root:program file name:inputs/test.py
+DEBUG:root:highest achievable label by the executing subject = A,['B'],['A']
+DEBUG:root:given labels of variables are 
+a : A,['A'],['A']
+b : A,['B'],['A']
+
+INFO:root:Parsing input.json is completed
+INFO:root:Parsing input.json started
+DEBUG:root:program file name:inputs/test.py
+DEBUG:root:highest achievable label by the executing subject = A,['B'],['A']
+DEBUG:root:given labels of variables are 
+b : A,['B'],['A']
+a : A,['A'],['A']
+
+INFO:root:Parsing input.json is completed
+INFO:root:Parsing input.json started
+DEBUG:root:program file name:inputs/test.py
+DEBUG:root:highest achievable label by the executing subject = A,['B'],['A']
+DEBUG:root:given labels of variables are 
+a : A,['A'],['A']
+b : A,['B'],['A']
+
+INFO:root:Parsing input.json is completed
+INFO:root:Parsing input.json started
+DEBUG:root:program file name:inputs/test.py
+DEBUG:root:highest achievable label by the executing subject = A,['B'],['A']
 DEBUG:root:given labels of variables are 
 a : A,['A'],['A']
 b : A,['B'],['A']
@@ -95,7 +89,7 @@ INFO:root:Parsing input.json is completed
 INFO:root:Program completed
 INFO:root:Parsing input.json started
 DEBUG:root:program file name:inputs/test.py
-DEBUG:root:highest achievable label by the executing subject = A,['A', 'B'],['A']
+DEBUG:root:highest achievable label by the executing subject = A,['B'],['A']
 DEBUG:root:given labels of variables are 
 a : A,['A'],['A']
 b : A,['B'],['A']
@@ -104,7 +98,7 @@ INFO:root:Parsing input.json is completed
 INFO:root:Program completed
 INFO:root:Parsing input.json started
 DEBUG:root:program file name:inputs/test.py
-DEBUG:root:highest achievable label by the executing subject = A,['A', 'B'],['A']
+DEBUG:root:highest achievable label by the executing subject = A,['B'],['A']
 DEBUG:root:given labels of variables are 
 b : A,['B'],['A']
 a : A,['A'],['A']
@@ -113,16 +107,7 @@ INFO:root:Parsing input.json is completed
 INFO:root:Program completed
 INFO:root:Parsing input.json started
 DEBUG:root:program file name:inputs/test.py
-DEBUG:root:highest achievable label by the executing subject = A,['A', 'B'],['A']
-DEBUG:root:given labels of variables are 
-b : A,['B'],['A']
-a : A,['A'],['A']
-
-INFO:root:Parsing input.json is completed
-INFO:root:Program completed
-INFO:root:Parsing input.json started
-DEBUG:root:program file name:inputs/test.py
-DEBUG:root:highest achievable label by the executing subject = A,['A', 'B'],['A']
+DEBUG:root:highest achievable label by the executing subject = A,['B'],['A']
 DEBUG:root:given labels of variables are 
 b : A,['B'],['A']
 a : A,['A'],['A']
@@ -130,7 +115,7 @@ a : A,['A'],['A']
 INFO:root:Parsing input.json is completed
 INFO:root:Parsing input.json started
 DEBUG:root:program file name:inputs/test.py
-DEBUG:root:highest achievable label by the executing subject = A,['A', 'B'],['A']
+DEBUG:root:highest achievable label by the executing subject = A,['B'],['A']
 DEBUG:root:given labels of variables are 
 a : A,['A'],['A']
 b : A,['B'],['A']
@@ -138,234 +123,10 @@ b : A,['B'],['A']
 INFO:root:Parsing input.json is completed
 INFO:root:Parsing input.json started
 DEBUG:root:program file name:inputs/test.py
-DEBUG:root:highest achievable label by the executing subject = A,['A', 'B'],['A']
-DEBUG:root:given labels of variables are 
-a : A,['A'],['A']
-b : A,['B'],['A']
-
-INFO:root:Parsing input.json is completed
-INFO:root:Parsing input.json started
-DEBUG:root:program file name:inputs/test.py
-DEBUG:root:highest achievable label by the executing subject = A,['A', 'B'],['A']
+DEBUG:root:highest achievable label by the executing subject = A,['B'],['A']
 DEBUG:root:given labels of variables are 
 b : A,['B'],['A']
 a : A,['A'],['A']
-
-INFO:root:Parsing input.json is completed
-INFO:root:Parsing input.json started
-DEBUG:root:program file name:inputs/test.py
-DEBUG:root:highest achievable label by the executing subject = A,['A', 'B'],['A']
-DEBUG:root:given labels of variables are 
-b : A,['B'],['A']
-a : A,['A'],['A']
-
-INFO:root:Parsing input.json is completed
-INFO:root:Parsing input.json started
-DEBUG:root:program file name:inputs/test.py
-DEBUG:root:highest achievable label by the executing subject = A,['A', 'B'],['A']
-DEBUG:root:given labels of variables are 
-b : A,['B'],['A']
-a : A,['A'],['A']
-
-INFO:root:Parsing input.json is completed
-INFO:root:Parsing input.json started
-DEBUG:root:program file name:inputs/test.py
-DEBUG:root:highest achievable label by the executing subject = A,['A', 'B'],['A']
-DEBUG:root:given labels of variables are 
-a : A,['A'],['A']
-b : A,['B'],['A']
-
-INFO:root:Parsing input.json is completed
-INFO:root:Parsing input.json started
-DEBUG:root:program file name:inputs/test.py
-DEBUG:root:highest achievable label by the executing subject = A,['A', 'B'],['A']
-DEBUG:root:given labels of variables are 
-a : A,['A'],['A']
-b : A,['B'],['A']
-
-INFO:root:Parsing input.json is completed
-INFO:root:Parsing input.json started
-DEBUG:root:program file name:inputs/test.py
-DEBUG:root:highest achievable label by the executing subject = A,['A', 'B'],['A']
-DEBUG:root:given labels of variables are 
-a : A,['A'],['A']
-b : A,['B'],['A']
-
-INFO:root:Parsing input.json is completed
-INFO:root:Parsing input.json started
-DEBUG:root:program file name:inputs/test.py
-DEBUG:root:highest achievable label by the executing subject = A,['A', 'B'],['A']
-DEBUG:root:given labels of variables are 
-b : A,['B'],['A']
-a : A,['A'],['A']
-
-INFO:root:Parsing input.json is completed
-INFO:root:Parsing input.json started
-DEBUG:root:program file name:inputs/test.py
-DEBUG:root:highest achievable label by the executing subject = A,['A', 'B'],['A']
-DEBUG:root:given labels of variables are 
-b : A,['B'],['A']
-a : A,['A'],['A']
-
-INFO:root:Parsing input.json is completed
-INFO:root:Parsing input.json started
-DEBUG:root:program file name:inputs/test.py
-DEBUG:root:highest achievable label by the executing subject = A,['A', 'B'],['A']
-DEBUG:root:given labels of variables are 
-b : A,['B'],['A']
-a : A,['A'],['A']
-
-INFO:root:Parsing input.json is completed
-INFO:root:Parsing input.json started
-DEBUG:root:program file name:inputs/test.py
-DEBUG:root:highest achievable label by the executing subject = A,['A', 'B'],['A']
-DEBUG:root:given labels of variables are 
-b : A,['B'],['A']
-a : A,['A'],['A']
-
-INFO:root:Parsing input.json is completed
-INFO:root:Parsing input.json started
-DEBUG:root:program file name:inputs/test.py
-DEBUG:root:highest achievable label by the executing subject = A,['A', 'B'],['A']
-DEBUG:root:given labels of variables are 
-a : A,['A'],['A']
-b : A,['B'],['A']
-
-INFO:root:Parsing input.json is completed
-INFO:root:Parsing input.json started
-DEBUG:root:program file name:inputs/test.py
-DEBUG:root:highest achievable label by the executing subject = A,['A', 'B'],['A']
-DEBUG:root:given labels of variables are 
-a : A,['A'],['A']
-b : A,['B'],['A']
-
-INFO:root:Parsing input.json is completed
-INFO:root:Parsing input.json started
-DEBUG:root:program file name:inputs/test.py
-DEBUG:root:highest achievable label by the executing subject = A,['A', 'B'],['A']
-DEBUG:root:given labels of variables are 
-b : A,['B'],['A']
-a : A,['A'],['A']
-
-INFO:root:Parsing input.json is completed
-INFO:root:Parsing input.json started
-DEBUG:root:program file name:inputs/test.py
-DEBUG:root:highest achievable label by the executing subject = A,['A', 'B'],['A']
-DEBUG:root:given labels of variables are 
-b : A,['B'],['A']
-a : A,['A'],['A']
-
-INFO:root:Parsing input.json is completed
-INFO:root:Parsing input.json started
-DEBUG:root:program file name:inputs/test.py
-DEBUG:root:highest achievable label by the executing subject = A,['A', 'B'],['A']
-DEBUG:root:given labels of variables are 
-a : A,['A'],['A']
-b : A,['B'],['A']
-
-INFO:root:Parsing input.json is completed
-INFO:root:Parsing input.json started
-DEBUG:root:program file name:inputs/test.py
-DEBUG:root:highest achievable label by the executing subject = A,['A', 'B'],['A']
-DEBUG:root:given labels of variables are 
-a : A,['A'],['A']
-b : A,['B'],['A']
-
-INFO:root:Parsing input.json is completed
-INFO:root:Parsing input.json started
-DEBUG:root:program file name:inputs/test.py
-DEBUG:root:highest achievable label by the executing subject = A,['A', 'B'],['A']
-DEBUG:root:given labels of variables are 
-b : A,['B'],['A']
-a : A,['A'],['A']
-
-INFO:root:Parsing input.json is completed
-INFO:root:Parsing input.json started
-DEBUG:root:program file name:inputs/test.py
-DEBUG:root:highest achievable label by the executing subject = A,['A', 'B'],['A']
-DEBUG:root:given labels of variables are 
-a : A,['A'],['A']
-b : A,['B'],['A']
-
-INFO:root:Parsing input.json is completed
-INFO:root:Parsing input.json started
-DEBUG:root:program file name:inputs/test.py
-DEBUG:root:highest achievable label by the executing subject = A,['A', 'B'],['A']
-DEBUG:root:given labels of variables are 
-b : A,['B'],['A']
-a : A,['A'],['A']
-
-INFO:root:Parsing input.json is completed
-INFO:root:Parsing input.json started
-DEBUG:root:program file name:inputs/test.py
-DEBUG:root:highest achievable label by the executing subject = A,['A', 'B'],['A']
-DEBUG:root:given labels of variables are 
-b : A,['B'],['A']
-a : A,['A'],['A']
-
-INFO:root:Parsing input.json is completed
-INFO:root:Parsing input.json started
-DEBUG:root:program file name:inputs/test.py
-DEBUG:root:highest achievable label by the executing subject = A,['A', 'B'],['A']
-DEBUG:root:given labels of variables are 
-a : A,['A'],['A']
-b : A,['B'],['A']
-
-INFO:root:Parsing input.json is completed
-INFO:root:Parsing input.json started
-DEBUG:root:program file name:inputs/test.py
-DEBUG:root:highest achievable label by the executing subject = A,['A', 'B'],['A']
-DEBUG:root:given labels of variables are 
-a : A,['A'],['A']
-b : A,['B'],['A']
-
-INFO:root:Parsing input.json is completed
-INFO:root:Parsing input.json started
-DEBUG:root:program file name:inputs/test.py
-DEBUG:root:highest achievable label by the executing subject = A,['A', 'B'],['A']
-DEBUG:root:given labels of variables are 
-b : A,['B'],['A']
-a : A,['A'],['A']
-
-INFO:root:Parsing input.json is completed
-INFO:root:Parsing input.json started
-DEBUG:root:program file name:inputs/test.py
-DEBUG:root:highest achievable label by the executing subject = A,['A', 'B'],['A']
-DEBUG:root:given labels of variables are 
-a : A,['A'],['A']
-b : A,['B'],['A']
-
-INFO:root:Parsing input.json is completed
-INFO:root:Parsing input.json started
-DEBUG:root:program file name:inputs/test.py
-DEBUG:root:highest achievable label by the executing subject = A,['A', 'B'],['A']
-DEBUG:root:given labels of variables are 
-b : A,['B'],['A']
-a : A,['A'],['A']
-
-INFO:root:Parsing input.json is completed
-INFO:root:Parsing input.json started
-DEBUG:root:program file name:inputs/test.py
-DEBUG:root:highest achievable label by the executing subject = A,['A', 'B'],['A']
-DEBUG:root:given labels of variables are 
-b : A,['B'],['A']
-a : A,['A'],['A']
-
-INFO:root:Parsing input.json is completed
-INFO:root:Parsing input.json started
-DEBUG:root:program file name:inputs/test.py
-DEBUG:root:highest achievable label by the executing subject = A,['A', 'B'],['A']
-DEBUG:root:given labels of variables are 
-b : A,['B'],['A']
-a : A,['A'],['A']
-
-INFO:root:Parsing input.json is completed
-INFO:root:Parsing input.json started
-DEBUG:root:program file name:inputs/test.py
-DEBUG:root:highest achievable label by the executing subject = A,['A', 'B'],['A']
-DEBUG:root:given labels of variables are 
-a : A,['A'],['A']
-b : A,['B'],['A']
 
 INFO:root:Parsing input.json is completed
 INFO:root:Parsing input.json started
@@ -404,19 +165,10 @@ INFO:root:Parsing input.json started
 DEBUG:root:program file name:inputs/test.py
 DEBUG:root:highest achievable label by the executing subject = A,['B'],['A']
 DEBUG:root:given labels of variables are 
-a : A,['A'],['A']
-b : A,['B'],['A']
-
-INFO:root:Parsing input.json is completed
-INFO:root:Parsing input.json started
-DEBUG:root:program file name:inputs/test.py
-DEBUG:root:highest achievable label by the executing subject = A,['B'],['A']
-DEBUG:root:given labels of variables are 
 b : A,['B'],['A']
 a : A,['A'],['A']
 
 INFO:root:Parsing input.json is completed
-INFO:root:Program completed
 INFO:root:Parsing input.json started
 DEBUG:root:program file name:inputs/test.py
 DEBUG:root:highest achievable label by the executing subject = A,['B'],['A']
@@ -434,16 +186,22 @@ a : A,['A'],['A']
 b : A,['B'],['A']
 
 INFO:root:Parsing input.json is completed
-INFO:root:Program completed
 INFO:root:Parsing input.json started
 DEBUG:root:program file name:inputs/test.py
 DEBUG:root:highest achievable label by the executing subject = A,['B'],['A']
 DEBUG:root:given labels of variables are 
-a : A,['A'],['A']
 b : A,['B'],['A']
+a : A,['A'],['A']
 
 INFO:root:Parsing input.json is completed
-INFO:root:Program completed
+INFO:root:Parsing input.json started
+DEBUG:root:program file name:inputs/test.py
+DEBUG:root:highest achievable label by the executing subject = A,['B'],['A']
+DEBUG:root:given labels of variables are 
+b : A,['B'],['A']
+a : A,['A'],['A']
+
+INFO:root:Parsing input.json is completed
 INFO:root:Parsing input.json started
 DEBUG:root:program file name:inputs/test.py
 DEBUG:root:highest achievable label by the executing subject = A,['B'],['A']
@@ -483,6 +241,22 @@ INFO:root:Parsing input.json started
 DEBUG:root:program file name:inputs/test.py
 DEBUG:root:highest achievable label by the executing subject = A,['B'],['A']
 DEBUG:root:given labels of variables are 
+b : A,['B'],['A']
+a : A,['A'],['A']
+
+INFO:root:Parsing input.json is completed
+INFO:root:Parsing input.json started
+DEBUG:root:program file name:inputs/test.py
+DEBUG:root:highest achievable label by the executing subject = A,['B'],['A']
+DEBUG:root:given labels of variables are 
+b : A,['B'],['A']
+a : A,['A'],['A']
+
+INFO:root:Parsing input.json is completed
+INFO:root:Parsing input.json started
+DEBUG:root:program file name:inputs/test.py
+DEBUG:root:highest achievable label by the executing subject = A,['B'],['A']
+DEBUG:root:given labels of variables are 
 a : A,['A'],['A']
 b : A,['B'],['A']
 
@@ -493,6 +267,38 @@ DEBUG:root:highest achievable label by the executing subject = A,['B'],['A']
 DEBUG:root:given labels of variables are 
 a : A,['A'],['A']
 b : A,['B'],['A']
+
+INFO:root:Parsing input.json is completed
+INFO:root:Parsing input.json started
+DEBUG:root:program file name:inputs/test.py
+DEBUG:root:highest achievable label by the executing subject = A,['B'],['A']
+DEBUG:root:given labels of variables are 
+a : A,['A'],['A']
+b : A,['B'],['A']
+
+INFO:root:Parsing input.json is completed
+INFO:root:Parsing input.json started
+DEBUG:root:program file name:inputs/test.py
+DEBUG:root:highest achievable label by the executing subject = A,['B'],['A']
+DEBUG:root:given labels of variables are 
+a : A,['A'],['A']
+b : A,['B'],['A']
+
+INFO:root:Parsing input.json is completed
+INFO:root:Parsing input.json started
+DEBUG:root:program file name:inputs/test.py
+DEBUG:root:highest achievable label by the executing subject = A,['B'],['A']
+DEBUG:root:given labels of variables are 
+b : A,['B'],['A']
+a : A,['A'],['A']
+
+INFO:root:Parsing input.json is completed
+INFO:root:Parsing input.json started
+DEBUG:root:program file name:inputs/test.py
+DEBUG:root:highest achievable label by the executing subject = A,['B'],['A']
+DEBUG:root:given labels of variables are 
+b : A,['B'],['A']
+a : A,['A'],['A']
 
 INFO:root:Parsing input.json is completed
 INFO:root:Program completed
@@ -504,6 +310,25 @@ b : A,['B'],['A']
 a : A,['A'],['A']
 
 INFO:root:Parsing input.json is completed
+INFO:root:Program completed
+INFO:root:Parsing input.json started
+DEBUG:root:program file name:inputs/test.py
+DEBUG:root:highest achievable label by the executing subject = A,['B'],['A']
+DEBUG:root:given labels of variables are 
+b : A,['B'],['A']
+a : A,['A'],['A']
+
+INFO:root:Parsing input.json is completed
+INFO:root:Program completed
+INFO:root:Parsing input.json started
+DEBUG:root:program file name:inputs/test.py
+DEBUG:root:highest achievable label by the executing subject = A,['B'],['A']
+DEBUG:root:given labels of variables are 
+b : A,['B'],['A']
+a : A,['A'],['A']
+
+INFO:root:Parsing input.json is completed
+INFO:root:Program completed
 INFO:root:Parsing input.json started
 DEBUG:root:program file name:inputs/test.py
 DEBUG:root:highest achievable label by the executing subject = A,['B'],['A']
@@ -553,10 +378,19 @@ INFO:root:Parsing input.json started
 DEBUG:root:program file name:inputs/test.py
 DEBUG:root:highest achievable label by the executing subject = A,['B'],['A']
 DEBUG:root:given labels of variables are 
-a : A,['A'],['A']
 b : A,['B'],['A']
+a : A,['A'],['A']
 
 INFO:root:Parsing input.json is completed
+INFO:root:Parsing input.json started
+DEBUG:root:program file name:inputs/test.py
+DEBUG:root:highest achievable label by the executing subject = A,['B'],['A']
+DEBUG:root:given labels of variables are 
+b : A,['B'],['A']
+a : A,['A'],['A']
+
+INFO:root:Parsing input.json is completed
+INFO:root:Program completed
 INFO:root:Parsing input.json started
 DEBUG:root:program file name:inputs/test.py
 DEBUG:root:highest achievable label by the executing subject = A,['B'],['A']
@@ -574,44 +408,13 @@ a : A,['A'],['A']
 b : A,['B'],['A']
 
 INFO:root:Parsing input.json is completed
-INFO:root:Parsing input.json started
-DEBUG:root:program file name:inputs/test.py
-DEBUG:root:highest achievable label by the executing subject = A,['B'],['A']
-DEBUG:root:given labels of variables are 
-a : A,['A'],['A']
-b : A,['B'],['A']
-
-INFO:root:Parsing input.json is completed
+INFO:root:Program completed
 INFO:root:Parsing input.json started
 DEBUG:root:program file name:inputs/test.py
 DEBUG:root:highest achievable label by the executing subject = A,['B'],['A']
 DEBUG:root:given labels of variables are 
 b : A,['B'],['A']
 a : A,['A'],['A']
-
-INFO:root:Parsing input.json is completed
-INFO:root:Parsing input.json started
-DEBUG:root:program file name:inputs/test.py
-DEBUG:root:highest achievable label by the executing subject = A,['B'],['A']
-DEBUG:root:given labels of variables are 
-b : A,['B'],['A']
-a : A,['A'],['A']
-
-INFO:root:Parsing input.json is completed
-INFO:root:Parsing input.json started
-DEBUG:root:program file name:inputs/test.py
-DEBUG:root:highest achievable label by the executing subject = A,['B'],['A']
-DEBUG:root:given labels of variables are 
-a : A,['A'],['A']
-b : A,['B'],['A']
-
-INFO:root:Parsing input.json is completed
-INFO:root:Parsing input.json started
-DEBUG:root:program file name:inputs/test.py
-DEBUG:root:highest achievable label by the executing subject = A,['B'],['A']
-DEBUG:root:given labels of variables are 
-a : A,['A'],['A']
-b : A,['B'],['A']
 
 INFO:root:Parsing input.json is completed
 INFO:root:Program completed
@@ -619,7 +422,158 @@ INFO:root:Parsing input.json started
 DEBUG:root:program file name:inputs/test.py
 DEBUG:root:highest achievable label by the executing subject = A,['B'],['A']
 DEBUG:root:given labels of variables are 
-a : A,['A'],['A']
 b : A,['B'],['A']
+a : A,['A'],['A']
+
+INFO:root:Parsing input.json is completed
+INFO:root:Parsing input.json started
+DEBUG:root:program file name:inputs/test.py
+DEBUG:root:highest achievable label by the executing subject = A,['B'],['A', 'C']
+DEBUG:root:given labels of variables are 
+a : A,['A', 'B'],['A']
+c : C,['C', 'B'],['C']
+
+INFO:root:Parsing input.json is completed
+INFO:root:Parsing input.json started
+DEBUG:root:program file name:inputs/test.py
+DEBUG:root:highest achievable label by the executing subject = A,['B'],['A', 'C']
+DEBUG:root:given labels of variables are 
+c : C,['C', 'B'],['C']
+a : A,['A', 'B'],['A']
+
+INFO:root:Parsing input.json is completed
+INFO:root:Parsing input.json started
+DEBUG:root:program file name:inputs/test.py
+DEBUG:root:highest achievable label by the executing subject = A,['B'],['A', 'C']
+DEBUG:root:given labels of variables are 
+a : A,['A', 'B'],['A']
+c : C,['C', 'B'],['C']
+
+INFO:root:Parsing input.json is completed
+INFO:root:Parsing input.json started
+DEBUG:root:program file name:inputs/test.py
+DEBUG:root:highest achievable label by the executing subject = A,['B'],['A', 'C']
+DEBUG:root:given labels of variables are 
+a : A,['A', 'B'],['A']
+c : C,['C', 'B'],['C']
+
+INFO:root:Parsing input.json is completed
+INFO:root:Parsing input.json started
+DEBUG:root:program file name:inputs/test.py
+DEBUG:root:highest achievable label by the executing subject = A,['B'],['A', 'C']
+DEBUG:root:given labels of variables are 
+a : A,['A', 'B'],['A']
+c : C,['C', 'B'],['C']
+
+INFO:root:Parsing input.json is completed
+INFO:root:Parsing input.json started
+DEBUG:root:program file name:inputs/test.py
+DEBUG:root:highest achievable label by the executing subject = A,['B'],['A', 'C']
+DEBUG:root:given labels of variables are 
+a : A,['A', 'B'],['A']
+c : C,['C', 'B'],['C']
+
+INFO:root:Parsing input.json is completed
+INFO:root:Parsing input.json started
+DEBUG:root:program file name:inputs/test.py
+DEBUG:root:highest achievable label by the executing subject = A,['B'],['A', 'C']
+DEBUG:root:given labels of variables are 
+c : C,['C', 'B'],['C']
+a : A,['A', 'B'],['A']
+
+INFO:root:Parsing input.json is completed
+INFO:root:Parsing input.json started
+DEBUG:root:program file name:inputs/test.py
+DEBUG:root:highest achievable label by the executing subject = A,['B'],['A', 'C']
+DEBUG:root:given labels of variables are 
+c : C,['C', 'B'],['C']
+a : A,['A', 'B'],['A']
+
+INFO:root:Parsing input.json is completed
+INFO:root:Parsing input.json started
+DEBUG:root:program file name:inputs/test.py
+DEBUG:root:highest achievable label by the executing subject = A,['B'],['A', 'C']
+DEBUG:root:given labels of variables are 
+a : A,['A', 'B'],['A']
+c : C,['C', 'B'],['C']
+
+INFO:root:Parsing input.json is completed
+INFO:root:Program completed
+INFO:root:Parsing input.json started
+DEBUG:root:program file name:inputs/test.py
+DEBUG:root:highest achievable label by the executing subject = A,['B'],['A', 'C']
+DEBUG:root:given labels of variables are 
+c : C,['C', 'B'],['C']
+a : A,['A', 'B'],['A']
+
+INFO:root:Parsing input.json is completed
+INFO:root:Program completed
+INFO:root:Parsing input.json started
+DEBUG:root:program file name:inputs/test.py
+DEBUG:root:highest achievable label by the executing subject = A,['B'],['A', 'C']
+DEBUG:root:given labels of variables are 
+c : C,['C', 'B'],['C']
+a : A,['A', 'B'],['A']
+
+INFO:root:Parsing input.json is completed
+INFO:root:Program completed
+INFO:root:Parsing input.json started
+DEBUG:root:program file name:inputs/test.py
+DEBUG:root:highest achievable label by the executing subject = A,['A'],['A', 'C']
+DEBUG:root:given labels of variables are 
+a : A,['A', 'B'],['A']
+c : C,['C', 'B'],['C']
+
+INFO:root:Parsing input.json is completed
+INFO:root:Program completed
+INFO:root:Parsing input.json started
+DEBUG:root:program file name:inputs/test.py
+DEBUG:root:highest achievable label by the executing subject = A,['C'],['A', 'C']
+DEBUG:root:given labels of variables are 
+c : C,['C', 'B'],['C']
+a : A,['A', 'B'],['A']
+
+INFO:root:Parsing input.json is completed
+INFO:root:Program completed
+INFO:root:Parsing input.json started
+DEBUG:root:program file name:inputs/test.py
+DEBUG:root:highest achievable label by the executing subject = A,['C'],['A', 'C']
+DEBUG:root:given labels of variables are 
+c : C,['C', 'B'],['C']
+a : A,['A', 'B'],['A']
+
+INFO:root:Parsing input.json is completed
+INFO:root:Program completed
+INFO:root:Parsing input.json started
+DEBUG:root:program file name:inputs/test.py
+DEBUG:root:highest achievable label by the executing subject = A,['C'],['A', 'C']
+DEBUG:root:given labels of variables are 
+a : A,['A', 'B'],['A']
+c : C,['C', 'B'],['C']
+
+INFO:root:Parsing input.json is completed
+INFO:root:Parsing input.json started
+DEBUG:root:program file name:inputs/test.py
+DEBUG:root:highest achievable label by the executing subject = A,['C'],['A', 'C']
+DEBUG:root:given labels of variables are 
+a : A,['A', 'B'],['A']
+c : C,['C', 'B'],['C']
+
+INFO:root:Parsing input.json is completed
+INFO:root:Parsing input.json started
+DEBUG:root:program file name:inputs/test.py
+DEBUG:root:highest achievable label by the executing subject = A,['B'],['A', 'C']
+DEBUG:root:given labels of variables are 
+c : C,['C', 'B'],['C']
+a : A,['A', 'B'],['A']
+
+INFO:root:Parsing input.json is completed
+INFO:root:Program completed
+INFO:root:Parsing input.json started
+DEBUG:root:program file name:inputs/test.py
+DEBUG:root:highest achievable label by the executing subject = A,['B'],['A', 'C']
+DEBUG:root:given labels of variables are 
+a : A,['A', 'B'],['A']
+b : C,['C', 'B'],['C']
 
 INFO:root:Parsing input.json is completed

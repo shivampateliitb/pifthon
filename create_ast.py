@@ -18,12 +18,10 @@ def writeAST(tree, filename):
 		for statement in tree.body:
 			block = type(statement).__name__
 			file.write(block+'\n')
-			if block == 'While':
-				file.write('start\n')
 			for child in ast.iter_child_nodes(statement):
 				v.visit(child)
 			if block == 'While':
-				file.write('end\n')
+				file.write('endloop\n')
 
 # 	'''Method that prints AST dump into console'''
 # 	print('########### AST dump ###########\n')

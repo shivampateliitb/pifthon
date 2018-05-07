@@ -21,7 +21,15 @@ class Visitor(ast.NodeVisitor):
         self._file_object.write('num:'+ str(node.__dict__['n']) + "\n")
          
     def visit_Str(self, node):
-        self._file_object.write('str:'+ node.s + "\n")
+        self._file_object.write('str:'+ node.s + "\n")  
+    
+    def visit_Arg(self, node):
+        self._file_object.write('arg:'+ node.s + '\n')
+        
+    def visit_FunctionDef(self, node):
+        for n in node.decorator_list:
+            if isinstance(n, ast.Call):
+                print("Call")
         
 # import contextlib
 # with contextlib.closing(Visitor('ast.dump')) as program:

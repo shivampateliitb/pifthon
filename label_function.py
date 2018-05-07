@@ -41,6 +41,28 @@ class LabelFunctions:
     def getPC(self):
         return self._pc
     
+    def setPC(self, pc_label):
+        self._pc = pc_label
+        
+    def isEqual(self, label_function):
+        try:
+            if self.getPC().isEqual(label_function.getPC()):
+                for key in label_function._local.keys():
+                    if self._local[key].isEqual(label_function._local[key]):
+                        return True
+                    else:
+                        return False
+            else:
+                return False
+        except Exception:
+            return False
+                
+    
+    def copy(self, label_function):
+        label_function.setPC(self.getPC())
+        for key in self._local.keys():
+            label_function.updateLocal(key, self._local[key])
+    
     def printGlobals(self):
         str=''
         for key in LabelFunctions._global.keys():

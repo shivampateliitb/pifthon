@@ -9,7 +9,8 @@
                     {"id":"B"}
                 ],
                 "writers": [
-                    {"id": "A"}
+                    {"id": "A"},
+                    {"id":"C"}
                 ]
             },
             
@@ -19,7 +20,8 @@
                     "label": {
                         "owner" : "A",
                         "readers": [
-                            {"id":"A"}
+                            {"id":"A"},
+                            {"id":"B"}
                         ],
                         "writers": [
                             {"id": "A"}
@@ -30,12 +32,13 @@
                 {
                     "id":"b",
                     "label": {
-                        "owner" : "A",
+                        "owner" : "C",
                         "readers": [
+                            {"id":"C"},
                             {"id":"B"}
                         ],
                         "writers": [
-                            {"id": "A"}
+                            {"id": "C"}
                         ]
                     }
                 }
