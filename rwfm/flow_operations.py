@@ -1,12 +1,12 @@
 from rwfm.Label import *
 
-def canFlow(from_label, to_label):
+def can_flow(from_label, to_label):
 	'''Function checks if from_label can flow to to_label and return true
 	or false either'''
 	# If readers set of from label contain * or is super set of to label then 
-	if from_label.getReaders()==['*'] or set(from_label.getReaders()).issuperset(set(to_label.getReaders())):
+	if from_label.get_readers()==['*'] or set(from_label.get_readers()).issuperset(set(to_label.get_readers())):
 		# If writers set of to label contains * or is superset of from label then return true
-		if to_label.getWriters()==['*'] or set(to_label.getWriters()).issuperset(set(from_label.getWriters())):
+		if to_label.get_writers()==['*'] or set(to_label.get_writers()).issuperset(set(from_label.get_writers())):
 			return True
 		else:
 			return False
@@ -18,12 +18,12 @@ def downgrade(subject_label, owner, object_label, principals):
 	'''Downgrade function declassifies the label of an object and return the declassified label and a boolean
 	value indicating a successful downgrading''' 
 	# If owner of the subject label executing the operation is same as "owner" then
-	if subject_label.getOwner() == owner:
+	if subject_label.get_owner() == owner:
 		#If the set principals is a subset of writers set of object_label or If owner is the sole writer 
 		# of object_label then also return True then return True
-		if principals.issubset(object_label.getWriters()) or object_label.getWriters().equal(set(owner)):
+		if principals.issubset(object_label.get_writers()) or object_label.get_writers().equal(set(owner)):
 			# Update the readers set of object_label
-			object_label.updateReaders(principals)
+			object_label.update_readers(principals)
 			return object_label, True
 		else:
 			return None, False

@@ -7,29 +7,29 @@ class Label:
 		self._readers = readers
 		self._writers = writers
 
-	def getOwner(self):
+	def get_owner(self):
 		return self._owner
 
-	def getReaders(self):
+	def get_readers(self):
 		return self._readers
 
-	def getWriters(self):
+	def get_writers(self):
 		return self._writers
-	
-	def updateReaders(self, readers):
+
+	def update_readers(self, readers):
 		self._readers = list(readers)
 		
-	def updateWriters(self, writers):
+	def update_writers(self, writers):
 		self._writers = list(writers)
 		
-	def isEqual(self, label):
-		if (self._owner == label.getOwner()) and (self._readers == label.getReaders()) and (self._writers == label.getWriters()):
+	def is_equal_to(self, label):
+		if (self._owner == label.get_owner()) and (set(self._readers) == set(label.get_readers())) and (set(self._writers) == set(label.get_writers())):
 			return True
 		else:
 			return False
 	
-	def printLabel(self):
-		lbl = str(self.getOwner()) + ',' + str(self.getReaders()) + ',' + str(self.getWriters())
+	def to_string(self):
+		lbl = str(self.get_owner()) + ',' + str(self.get_readers()) + ',' + str(self.get_writers())
 		return lbl
 	
 	
