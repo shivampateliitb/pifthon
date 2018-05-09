@@ -73,6 +73,7 @@ def is_a_variable(current_line):
 
 
 def get_the_variable(current_line):
+    print(current_line)
     return lines[current_line].split(':')[1]
 
 
