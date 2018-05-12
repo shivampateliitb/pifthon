@@ -2,13 +2,13 @@ from rwfm.Label import Label
 
 
 class LabelFunctions:
-    _global=dict()
-
+    _global = dict()
+    _functions = dict()
 
     def __init__(self):
         self._pc = Label('PC',['*'],[])
-        self._local=dict()
-
+        self._local = dict()
+        self._downgraded_label = list()
 
     def update_local_label_list(self, id, label_object):
         new_label = Label(label_object.get_owner(),
@@ -20,7 +20,42 @@ class LabelFunctions:
     def insert_into_global_list(self, id, label_object):
         LabelFunctions._global[id]=label_object
 
-      
+
+    def insert_into_function_list(self, function_name, label_object):
+        LabelFunctions._functions[function_name] = label_object
+        
+
+    def find_in_functions_list(self, function_name):
+        if function_name in LabelFunctions._functions.keys():
+            return True
+        else:
+            return False
+
+
+    def label_from_functions_list(self, function_name):
+        if function_name in LabelFunctions._functions.keys():
+            return LabelFunctions._functions[function_name]
+        else:
+            return None
+
+    
+    def insert_into_downgrade_list(self, label):
+        self._downgraded_label.append(label)
+
+
+    def remove_from_downgrade_list(self, index):
+        return self._downgraded_label.pop(index)
+
+
+
+    def make_downgrade_list_empty(self):
+        self._downgraded_label = list()
+
+
+    def get_downgrade_list(self):
+        return self._downgraded_label
+
+
     def is_local(self, id):
         if id in self._local.keys():
             return True
@@ -44,7 +79,7 @@ class LabelFunctions:
     
     def label_from_global_list(self, id):
         if id in LabelFunctions._global.keys():
-            return self._global[id]
+            return LabelFunctions._global[id]
         else:
             return None
 
@@ -92,3 +127,9 @@ class LabelFunctions:
             str = str + key + ' : ' + LabelFunctions._local[key].to_string() + '\n'
         return str
     
+
+    def print_function_labels(self):
+        str = ''
+        for key in LabelFunctions._functions.keys():
+            str = str + key + ' : ' + LabelFunctions._functions[key].to_string() + '\n'
+        return str

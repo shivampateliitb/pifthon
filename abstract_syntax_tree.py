@@ -14,6 +14,7 @@ def write_ast_into_file(tree, filename):
 	with open(filename,'w') as file:
 		v=Visitor(file)	
 		for statement in tree.body:
+# 			print(ast.dump(statement))
 			v.visit(statement)
 
 
@@ -73,16 +74,29 @@ class Visitor(ast.NodeVisitor):
 
     def visit_Call(self, node):
     	self._file_object.write(type(node).__name__ + '\n')
-    	self._file_object.write('name:' + node.func.id + '\n')
+    	self._file_object.write('func:' + node.func.id + '\n')
     	for arg in node.args:
-    		self._file_object.write('args:' + arg.id + '\n')
+    		data_type = type(arg).__name__
+    		if data_type == 'Num':
+    			self._file_object.write('arg:' + str(arg.n) + '\n')
+    		elif data_type == 'Str':
+    			self._file_object.write('arg:' + arg.s + '\n')
+    		elif data_type == 'List':
+    			self._file_object.write('arg:')
+    			for i in range(len(arg.elts)):
+    				self._file_object.write(arg.elts[i].s)
+    				if not i == (len(arg.elts)-1):
+    					self._file_object.write(',')
+    			self._file_object.write('\n')
+    		else:
+    			self._file_object.write('arg:' + arg.id + '\n')
 
 
     def visit_FunctionDef(self, node):
     	self._file_object.write(type(node).__name__ + '\n')
-    	self._file_object.write('name:' + node.name + '\n')
+    	self._file_object.write('func:' + node.name + '\n')
     	for arg in node.args.args:
-    		self._file_object.write('args:' + arg.arg + '\n')
+    		self._file_object.write('arg:' + arg.arg + '\n')
     	super().generic_visit(node)
     	self._file_object.write('endfunc\n')
     	

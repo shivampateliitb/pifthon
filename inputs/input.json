@@ -20,11 +20,11 @@
                     "label": {
                         "owner" : "A",
                         "readers": [
-                            {"id":"A"},
                             {"id":"B"}
                         ],
                         "writers": [
-                            {"id": "A"}
+                            {"id": "A"},
+                            {"id": "C"}
                         ]
                     }
                 },
@@ -32,7 +32,7 @@
                 {
                     "id":"b",
                     "label": {
-                        "owner" : "C",
+                        "owner" : "A",
                         "readers": [
                             {"id":"C"},
                             {"id":"B"}

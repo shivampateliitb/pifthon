@@ -15,6 +15,9 @@ class Label:
 
 	def get_writers(self):
 		return self._writers
+	
+	def insert_into_readers(self, readers):
+		self._readers = list(set(self._readers) | set(readers))
 
 	def update_readers(self, readers):
 		self._readers = list(readers)

@@ -1,5 +1,4 @@
 def foo(a):
-    c = a
-    return c , a
-    
-b, c=foo(a)
+    if a<5:
+        return a, b
+c, d = foo(a)
