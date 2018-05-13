@@ -211,7 +211,7 @@ def read_source_labels(sources, clearance, lbl_function):
         else:
             error_type = 0
             print_misuse_message(error_type, 
-                                source[i], 
+                                sources[i], 
                                 None,
                                 source_label,
                                 clearance)
@@ -248,7 +248,7 @@ def print_misuse_message(error_type,
     try:
         if error_type == 0:
             message_1 = ('MISUSE: Label of the source variable ' + 
-                         source_variable + ' is higher than that of'
+                         source_variable + ' is higher than that of '
                          'executing subject')
         elif error_type == 1:
             message_1 = ('MISUSE: Illegal information flow from PC to '
@@ -354,12 +354,12 @@ def DL(current_line, clearance, lbl_function):
             sources, current_line = obtain_source_variables(current_line)
             # read the source variables' labels
             lbl_function = read_source_labels(sources, clearance, lbl_function)
-        if is_a_function_call(lines[current_line]):
+        elif is_a_function_call(lines[current_line]):
             lbl_function, current_line = DL(current_line,
                                             clearance,
                                             lbl_function)
             for label in lbl_function.get_downgrade_list():
-                readers, writers = label_operations.join(lbl_function.remove_from_downgrade_list(label), 
+                readers, writers = label_operations.join(lbl_function.remove_from_downgrade_list(), 
                                                      lbl_function.get_pc_label())
                 lbl_function.get_pc_label().update_readers(readers)
                 lbl_function.get_pc_label().update_writers(writers)
@@ -427,6 +427,7 @@ def DL(current_line, clearance, lbl_function):
                 current_line = next_line(current_line)
                 return lbl_function, current_line
         except Exception as e:
+            print('current line:' + str(current_line))
             print('Function ' + inspect.stack()[0][3] + 
                   ': fails in Iteration statement')
             print(str(e))
@@ -495,6 +496,11 @@ def DL(current_line, clearance, lbl_function):
                                                         new_lbl_function)
                     else:
                         current_line = next_line(current_line)
+                # copy the downgrade list from new labelling function to old 
+                # labelling function after the completion of function call
+                # execution
+                for label in new_lbl_function.get_downgrade_list():
+                    lbl_function.insert_into_downgrade_list(label)
                 # restore the saved current line to resume the execution after
                 # the function is executed
                 current_line = saved_current_line
@@ -530,7 +536,7 @@ def DL(current_line, clearance, lbl_function):
             if lbl_function.is_local(variable):
                 variable_label = lbl_function.label_from_local_list(variable)
             # if the variable is from the global list
-            if lbl_function.is_global(variable):
+            elif lbl_function.is_global(variable):
                 variable_label = lbl_function.label_from_global_list(variable)
             # new readers would be the principals already there in the writers
             # set for each variable

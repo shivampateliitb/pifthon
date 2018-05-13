@@ -20,7 +20,8 @@
                     "label": {
                         "owner" : "A",
                         "readers": [
-                            {"id":"B"}
+                            {"id":"B"},
+                            {"id":"D"}
                         ],
                         "writers": [
                             {"id": "A"},
@@ -34,8 +35,8 @@
                     "label": {
                         "owner" : "A",
                         "readers": [
-                            {"id":"C"},
-                            {"id":"B"}
+                            {"id":"B"},
+                            {"id":"C"}
                         ],
                         "writers": [
                             {"id": "C"}

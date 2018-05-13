@@ -38,14 +38,13 @@ class LabelFunctions:
         else:
             return None
 
-    
+
     def insert_into_downgrade_list(self, label):
         self._downgraded_label.append(label)
 
 
-    def remove_from_downgrade_list(self, index):
-        return self._downgraded_label.pop(index)
-
+    def remove_from_downgrade_list(self):
+        return self._downgraded_label.pop(0)
 
 
     def make_downgrade_list_empty(self):
