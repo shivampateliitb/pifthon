@@ -114,21 +114,21 @@ class LabelFunctions:
 
 
     def print_global_labels(self):
-        str=''
+        str='Given global labels are:\n'
         for key in LabelFunctions._global.keys():
             str = str + key + ' : ' + LabelFunctions._global[key].to_string() + '\n'
         return str
 
 
     def print_local_labels(self):
-        str=''
+        str='Derived local labels are:\n'
         for key in LabelFunctions._local.keys():
             str = str + key + ' : ' + LabelFunctions._local[key].to_string() + '\n'
         return str
     
 
     def print_function_labels(self):
-        str = ''
+        str = 'Given function labels are:\n'
         for key in LabelFunctions._functions.keys():
             str = str + key + ' : ' + LabelFunctions._functions[key].to_string() + '\n'
         return str

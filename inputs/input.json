@@ -1,27 +1,26 @@
 {
     "source_file":
     {
-            "name": "test.py",
+            "name": "test_1.py",
             
             "label": {
                 "owner" : "A",
                 "readers": [
-                    {"id":"B"}
+                    {"id":"D"}
                 ],
                 "writers": [
                     {"id": "A"},
                     {"id":"C"}
                 ]
             },
-            
+
             "global_vars": [
                 {
                     "id":"a",
                     "label": {
                         "owner" : "A",
                         "readers": [
-                            {"id":"B"},
-                            {"id":"D"}
+                            {"id":"B"}
                         ],
                         "writers": [
                             {"id": "A"},
@@ -29,14 +28,13 @@
                         ]
                     }
                 },
-                
+
                 {
                     "id":"b",
                     "label": {
                         "owner" : "A",
                         "readers": [
-                            {"id":"B"},
-                            {"id":"C"}
+                            {"id":"D"}
                         ],
                         "writers": [
                             {"id": "C"}

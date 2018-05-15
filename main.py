@@ -1,3 +1,4 @@
+import sys
 import logging
 import parse_input_file
 import abstract_syntax_tree
@@ -11,20 +12,28 @@ def main():
     
     #Obtain the name of the source file
     #input_program contain the path to the source file
-    input_program = parse_input_file.parse_source_filename('inputs/input.json')
-    logging.debug('program file name:'+ input_program)
+    try:
+        if len(sys.argv) == 2:
+            json_file = str(sys.argv[1])
+            input_program = parse_input_file.parse_source_filename(json_file)
+            logging.debug('program file name:'+ input_program)
     
-    #Obtain security label of executing subject
-    #clearance is the highest achievable security label by the executing subject
-    clearance = parse_input_file.parse_subject_label('inputs/input.json')
-    logging.debug('highest achievable label by the executing subject = '+ clearance.to_string())
+            #Obtain security label of executing subject
+            #clearance is the highest achievable security label by the executing subject
+            clearance = parse_input_file.parse_subject_label(json_file)
+            logging.debug('highest achievable label by the executing subject = '+ clearance.to_string())
     
-    #Obtain global variables and their respective security label
-    #global_vars is a dictionary containing variable as key and mapped to it's security label
-    global_vars = parse_input_file.parse_globals('inputs/input.json')
-    logging.debug('given labels of variables are \n'+ parse_input_file.print_globals(global_vars))
-    
-    
+            #Obtain global variables and their respective security label
+            #global_vars is a dictionary containing variable as key and mapped to it's security label
+            global_vars = parse_input_file.parse_globals(json_file)
+            logging.debug('given labels of variables are \n'+ parse_input_file.print_globals(global_vars))
+        else:
+            print("ERROR: more than one arguments are given")
+            sys.exit()
+    except ValueError as e:
+        print('ERROR: invalid json: %s' %e)
+        sys.exit()
+        
     logging.info('Parsing input.json is completed')
     
     #A abstract syntax tree (AST) named tree is created and populated with the AST of the given program
@@ -42,6 +51,10 @@ def main():
     # Call the labelling function of DynamicLabelling class    
     dynamic_labelling.perform_labelling('test.temp', clearance, lbl_function)
     
+    
+    lbl_function.print_function_labels()
+    lbl_function.print_global_labels()
+    lbl_function.print_local_labels()
     
     print('Program is information flow secure')
     logging.info("Program completed")
