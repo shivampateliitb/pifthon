@@ -26,35 +26,63 @@ def parse_writers(data):
 def parse_source_filename(json_file):
     '''Method returns a list containing name of the source files'''
     _input_data = json.load(open(json_file))
-    return "inputs/"+ _input_data["source_file"]["name"]
+    return  _input_data["source_file"]["path"]
 
 
 def parse_subject_label(json_file):
     '''Method returns the security label of executing subject given in the input file'''
     _input_data = json.load(open(json_file))
-    _owner = parse_owner(_input_data["source_file"]["label"])
-    _readers = parse_readers(_input_data["source_file"]["label"])
-    _writers = parse_writers(_input_data["source_file"]["label"])      
-    subject_label = Label(_owner,_readers,_writers)
-    return subject_label
+    try:
+        _owner = parse_owner(_input_data["source_file"]["label"])
+        _readers = parse_readers(_input_data["source_file"]["label"])
+        _writers = parse_writers(_input_data["source_file"]["label"])      
+        subject_label = Label(_owner,_readers,_writers)
+    except KeyError as e:
+        return None
+    else:
+        return subject_label
         
 def parse_globals(json_file):
     '''Method returns a dictionary having global variables as key that is mapped to respective static label '''
     _input_data = json.load(open(json_file))
     _globals={}
-    for globals in _input_data["source_file"]["global_vars"]:
-        _id = globals["id"]
-        _owner = parse_owner(globals["label"])
-        _readers = parse_readers(globals["label"])
-        _writers = parse_writers(globals["label"])
-        _label = Label(_owner,_readers,_writers)
-        _globals[_id]=_label
-        
-    return _globals
+    try:
+        for globals in _input_data["source_file"]["global_vars"]:
+            _id = globals["id"]
+            _owner = parse_owner(globals["label"])
+            _readers = parse_readers(globals["label"])
+            _writers = parse_writers(globals["label"])
+            _label = Label(_owner,_readers,_writers)
+            _globals[_id]=_label
+    except KeyError as e:
+        return None
+    else:
+        return _globals
 
-def print_globals(globals):
-    str=''
-    for key in globals.keys():
-        str = str + key + ' : ' + globals[key].to_string() + '\n'
-    return str
+
+def parse_function_labels(json_file):
+    _input_data = json.load(open(json_file))
+    _functions = {}
+    try:
+        for function in _input_data["source_file"]["function_label"]:
+            _name = function["name"]
+            _owner = parse_owner(function["label"])
+            _readers = parse_readers(function["label"])
+            _writers = parse_writers(function["label"])
+            _label = Label(_owner, _readers, _writers)
+            _functions[_name] = _label
+    except KeyError as e:
+        return None
+    else:
+        return _functions
+
+
+# def print_globals(globals):
+#     str=''
+#     if globals:
+#         for key in globals.keys():
+#             str = str + key + ' : ' + globals[key].to_string() + '\n'
+#         return str
+#     else:
+#         return 'Not Given'
 

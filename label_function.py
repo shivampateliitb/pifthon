@@ -115,20 +115,26 @@ class LabelFunctions:
 
     def print_global_labels(self):
         str='Given global labels are:\n'
-        for key in LabelFunctions._global.keys():
-            str = str + key + ' : ' + LabelFunctions._global[key].to_string() + '\n'
-        return str
+        if LabelFunctions._global:
+            for key in LabelFunctions._global.keys():
+                str = str + key + ' : ' + LabelFunctions._global[key].to_string() + '\n'
+            return str
+        else:
+            return str + 'Not Given'
 
 
     def print_local_labels(self):
-        str='Derived local labels are:\n'
-        for key in LabelFunctions._local.keys():
-            str = str + key + ' : ' + LabelFunctions._local[key].to_string() + '\n'
+        str=''
+        for key in self._local.keys():
+            str = str + key + ' : ' + self._local[key].to_string() + '\n'
         return str
     
 
     def print_function_labels(self):
         str = 'Given function labels are:\n'
-        for key in LabelFunctions._functions.keys():
-            str = str + key + ' : ' + LabelFunctions._functions[key].to_string() + '\n'
-        return str
+        if LabelFunctions._functions:
+            for key in LabelFunctions._functions.keys():
+                str = str + key + ' : ' + LabelFunctions._functions[key].to_string() + '\n'
+            return str
+        else:
+            return str + 'Not Given'

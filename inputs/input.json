@@ -1,26 +1,43 @@
 {
     "source_file":
     {
-            "name": "test_1.py",
+            "path": "inputs/test_0.py",
             
             "label": {
                 "owner" : "A",
                 "readers": [
-                    {"id":"D"}
+                    {"id":"B"}
                 ],
                 "writers": [
                     {"id": "A"},
                     {"id":"C"}
                 ]
             },
-
+            
+            "function_label": [
+                {
+                    "name":"foo",
+                    "label": {
+                        "owner" : "A",
+                        "readers": [
+                            {"id":"B"}
+                        ],
+                        "writers": [
+                            {"id": "A"},
+                            {"id": "C"}
+                        ]
+                    }
+                }
+            ],
+            
             "global_vars": [
                 {
                     "id":"a",
                     "label": {
                         "owner" : "A",
                         "readers": [
-                            {"id":"B"}
+                            {"id":"B"},
+                            {"id":"D"}
                         ],
                         "writers": [
                             {"id": "A"},
@@ -34,7 +51,7 @@
                     "label": {
                         "owner" : "A",
                         "readers": [
-                            {"id":"D"}
+                            {"id":"B"}
                         ],
                         "writers": [
                             {"id": "C"}

@@ -1,5 +1,5 @@
 import ast
-
+import logging
 
 global tree
 
@@ -31,8 +31,7 @@ class Visitor(ast.NodeVisitor):
 
     
     def generic_visit(self, node):
-#         self._file_object.write(type(node).__name__ + "\n")
-        super().generic_visit(node)
+    	super().generic_visit(node)
 
 
     def visit_Name(self, node):

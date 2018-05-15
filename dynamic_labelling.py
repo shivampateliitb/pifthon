@@ -6,12 +6,12 @@ import sys
 import logging
 import inspect
 import traceback
-from symbol import argument
+
 
 statements = ['Assign', 'Compare', 'While', 'Call', 'Return']
 keywords = ['endloop', 'Tuple', 'Return', 'endtuple', 'downgrade', 'print', 'FunctionDef', 'endfunc']
 functions = dict()
-iteration = 1
+
 
 def is_a_statement(word):
     if word in statements:
@@ -198,16 +198,21 @@ def read_source_labels(sources, clearance, lbl_function):
     for i in range(0, len(sources)):
         if lbl_function.is_local(sources[i]):
             source_label = lbl_function.label_from_local_list(sources[i])
+            logging.debug('Source variable %s is a local having label %s' %(sources[i], source_label.to_string()))
         elif lbl_function.is_global(sources[i]):
             source_label = lbl_function.label_from_global_list(sources[i])
+            logging.debug('Source variable %s is a global having label %s' %(sources[i], source_label.to_string()))
         else:
             source_label = Label(clearance.get_owner(), ['*'], [])
+            logging.debug('Source variable %s is a created with label %s' %(sources[i], source_label.to_string()))
 
         if flow_operations.can_flow(source_label, clearance):
             readers, writers = label_operations.join(source_label, 
                                                      lbl_function.get_pc_label())
+            logging.debug('PC label before reading %s is %s'%(sources[i], lbl_function.get_pc_label().to_string()))
             lbl_function.get_pc_label().update_readers(readers)
             lbl_function.get_pc_label().update_writers(writers)
+            logging.debug('PC label after reading %s is %s'%(sources[i], lbl_function.get_pc_label().to_string()))
         else:
             error_type = 0
             print_misuse_message(error_type, 
@@ -225,8 +230,10 @@ def read_arguments(subject_label, arguments, lbl_function):
     for i in range(0, len(arguments)):
         if lbl_function.is_local(arguments[i]):
             argument_label = lbl_function.label_from_local_list(arguments[i])
+            logging.debug('Local variable %s has label %s' %(arguments[i], argument_label.to_string()))
         if lbl_function.is_global(arguments[i]):
             argument_label = lbl_function.label_from_global_list(arguments[i])
+            logging.debug('Global variable %s has label %s' %(arguments[i], argument_label.to_string()))
         # if the argument has neither a local nor a globally defined label
         # then it is a constant literal e.g., integer, float or string 
         if 'argument_label' in locals():    
@@ -259,17 +266,19 @@ def print_misuse_message(error_type,
         else:
             pass
     except Exception as e:
-        print('Function ' + inspect.stack()[0][3] + 'raised an exception')
-        print(str(e))
+        logging.debug('Function %s raised an exception' % inspect.stack()[0][3])
+        logging.warning('%s'%e)
         
     message_2 = 'Information from ' + source_label.to_string() + ' cannot flow to ' + target_label.to_string()  
-    print(message_1 + '\n' + message_2)
+    logging.warning('%s\n%s'%(message_1, message_2))
     #print('iteration performed: ' + str(iteration))
+    logging.warning('****** Monitor Aborted ******')
     sys.exit()
 
 
 def perform_downgrading(current_line, clearance, lbl_function):
     try:
+        logging.debug('current node: %s at line %s' %(lines[current_line], current_line))
         # at this point current line is calling the downgrading, hence 
         # move to next line to fetch its arguments
         current_line = next_line(current_line)
@@ -279,12 +288,15 @@ def perform_downgrading(current_line, clearance, lbl_function):
             if i == 0:
                 object = lines[current_line].split(':')[1]
                 if lbl_function.is_local(object):
+                    logging.debug('Variable %s has a dynamic label'%object)
                     object_label = lbl_function.label_from_local_list(object)
                 else:
+                    logging.debug('Variable %s has a fixed label'%object)
                     object_label = lbl_function.label_from_global_list(object)
             else:
                 new_readers = lines[current_line].split(':')[1].split(',')
             current_line = next_line(current_line)
+        logging.debug('Variable %s having label %s is going to be downgraded to %s'%(object, object_label.to_string(), new_readers))
         # make target label same as object label only with added readers
         target_label = Label(object_label.get_owner(),
                              object_label.get_readers(),
@@ -294,9 +306,14 @@ def perform_downgrading(current_line, clearance, lbl_function):
         new_label = flow_operations.downgrade(clearance, 
                                               object,
                                               object_label, 
-                                              new_readers) 
-        # downgrading is successfull if returned label is equal with target label
-        if not new_label == None and new_label.is_equal_to(target_label):
+                                              new_readers)
+        
+        # downgrading is successfull if:    
+        # if object label is global then check if new label and object label is same
+        # otherwise if new label and target label is same and new label is not none
+        if (lbl_function.is_global(object) and new_label.is_equal_to(object_label)) \
+        or (not new_label == None and new_label.is_equal_to(target_label)):
+            logging.debug('New label of variable %s is %s' %(object, new_label.to_string()))
             return new_label, current_line
         else:
             error_type = 2
@@ -307,9 +324,9 @@ def perform_downgrading(current_line, clearance, lbl_function):
                                  target_label)
             
     except Exception as e:
-        print('Function ' + inspect.stack()[0][3] + 
-              ': fails during downgrading')
-        print(str(e))
+        logging.debug('Function %s : fails during downgrading' %inspect.stack()[0][3])
+        logging.warning('%s'%e)
+        logging.warning('****** Monitor Aborted ******')
         sys.exit()
 
 
@@ -324,6 +341,7 @@ def perform_assignment(current_line, clearance, lbl_function):
         # fetch a single target variable as well as a tuple of target variables
         # and store them in a list called targets
         targets, current_line = obtain_target_variables(current_line)
+        logging.debug('Target variables of the assignment statement are: %s' %targets)
         # go to the next line to start fetching the source variables or
         # if it is a function call then execute that function
         current_line = next_line(current_line)
@@ -333,6 +351,7 @@ def perform_assignment(current_line, clearance, lbl_function):
             # obtain source variables of an assignment statement and store them
             # into a list called sources
             sources, current_line = obtain_source_variables(current_line)
+            logging.debug('Source variables of the assignment statement are: %s' %sources)
             # read the source variables' labels , check if the 
             # label of each variable can flow to executing subject and if yes
             # then update the PC label, finally return the updated labelling
@@ -356,6 +375,7 @@ def perform_assignment(current_line, clearance, lbl_function):
                 lbl_function.get_pc_label().update_writers(writers)
         # obtain the new PC label
         pc_label = lbl_function.get_pc_label()
+        logging.debug('Updated PC label %s' %pc_label.to_string())
         # now iterate the targets list and for each target variables check if
         # the PC label can flow to target label (if global) or update the target
         # label if local or create a new target label if that variable is not
@@ -364,12 +384,15 @@ def perform_assignment(current_line, clearance, lbl_function):
             # if the label is in the local list then update the local label
             if lbl_function.is_local(target):
                 target_label = lbl_function.label_from_local_list(target)
+                logging.debug('Old label of target %s is %s'%(target, target_label.to_string()))
                 target_label.update_readers(pc_label.get_readers())
                 target_label.update_writers(pc_label.get_writers())
+                logging.debug('New label of target %s is %s'%(target, target_label.to_string()))
             # if the label is in global list then check if the new PC label
             # can flow into the target label
             elif lbl_function.is_global(target):
                 target_label = lbl_function.label_from_global_list(target)
+                logging.debug('Label of target %s is a given as %s' %(target, target_label.to_string()))
                 # check if PC label can flow to target label otherwise print the
                 # misuse message
                 if not flow_operations.can_flow(pc_label, target_label):
@@ -385,12 +408,12 @@ def perform_assignment(current_line, clearance, lbl_function):
                 target_label = Label(clearance.get_owner(),
                                      pc_label.get_readers(),
                                      pc_label.get_writers())
+                logging.debug('Target %s is a new variable created with label %s' %(target, target_label.to_string()))
                 lbl_function.update_local_label_list(target, target_label)
     except Exception as e:
-        print('Function ' + inspect.stack()[0][3] + 
-                  ': fails to access ' + target +
-                  ' in Assignment statement')
-        print(str(e))
+        logging.debug('Function %s : fails to access %s in Assignment statement'%( inspect.stack()[0][3], target))
+        logging.warning('%s' %e)
+        logging.warning('****** Monitor Aborted ******')
         sys.exit()
         
     return lbl_function, current_line
@@ -404,13 +427,14 @@ def perform_comparison(current_line, clearance, lbl_function):
         current_line = next_line(current_line)
         # fetch the source variables involved in the comparison statement
         sources, current_line = obtain_source_variables(current_line)
+        logging.debug('Source variables of comparison statements are: %s' %sources)
         # read the label of each variable and check if their label can flow
         # to executing subject as well as PC and update PC label accordingly
         lbl_function = read_source_labels(sources, clearance, lbl_function)
     except Exception as e:
-        print('Function ' + inspect.stack()[0][3] + 
-                  ': fails in Comparison statement')
-        print(str(e))
+        logging.debug('Function %s : fails in Comparison statement' % inspect.stack()[0][3])
+        logging.warn('%s'%e)
+        logging.warning('****** Monitor Aborted ******')
         sys.exit()
             
     return lbl_function, current_line
@@ -422,12 +446,16 @@ def perform_iteration(current_line, clearance, lbl_function):
         # first save the current line as we might need to execute from this point
         # again in future
         start_line = current_line
+        logging.debug('Save the starting line of loop is: %s' %start_line)
         # now also create another new labelling function to make a copy of
         # existing labelling function
         start_lbl_function = create_labelling_function()
+        logging.debug('New labelling function is created')
         lbl_function.copy_into(start_lbl_function)
+        logging.debug('Old labelling function is copied into new labelling function')
         # go to the next line to start operating on the body of a While statement
         current_line = next_line(current_line)
+        logging.debug('Start executing the loop body at line %s' % current_line)
         # iterate until it reach the end of the While body
         while not is_an_endloop(lines[current_line]):
             if is_a_statement(lines[current_line]):
@@ -439,26 +467,27 @@ def perform_iteration(current_line, clearance, lbl_function):
             # otherwise skip to the next line
             else:
                 current_line = next_line(current_line)
+        logging.debug('Stop executing the loop body at line %s' %current_line)
         # after completing the execution of loop body the monitor will check if
         # the new labelling function is same as the old labelling function. If 
         # it is not same then again execute the loop body
         if not lbl_function.is_equal_to(start_lbl_function):
+            logging.debug('New labels are not same as old labels')
             # restore the current line to start the loop body execution again
             current_line = start_line
+            logging.debug('Restore the starting line of loop is %s' %current_line)
             # this is a global variable to note down number of iteration
-            global iteration
-            iteration = iteration + 1
             return DL(current_line, clearance, lbl_function)
         # if the labelling function is unchanged then skip to the next line
         # and return the labelling function
         else:
+            logging.debug('New labels are same as old labels')
             current_line = next_line(current_line)
             return lbl_function, current_line
     except Exception as e:
-        print('current line:' + str(current_line))
-        print('Function ' + inspect.stack()[0][3] + 
-                  ': fails in Iteration statement')
-        print(str(e)) 
+        logging.debug('Function %s fails in Iteration statement' %inspect.stack()[0][3])
+        logging.warning('%s' %e) 
+        logging.warning('****** Monitor Aborted ******')
         sys.exit()
 
 
@@ -469,6 +498,7 @@ def perform_function_call(current_line, clearance, lbl_function):
         current_line = next_line(current_line)
         # get the function name
         function_name = get_the_id(current_line)
+        logging.debug('Function name: %s' %function_name)
         # check if the function is defined earlier before executing
         if is_defined(function_name):
             # if the function is executed with different subject label 
@@ -479,12 +509,14 @@ def perform_function_call(current_line, clearance, lbl_function):
             # executing subject
             else:
                 subject_label = clearance
+            logging.debug('Function is executed with subject label %s' % subject_label.to_string())
             # current line is at the function name, go to the next line
             current_line = next_line(current_line)
             # obtain the list of arguments, this list will be
             # used during executing function to match the total number and
             # order of the arguments with parameters in function definition
             arguments, current_line = obtain_arguments(current_line)
+            logging.debug('Function arguments are %s'%arguments)
             # if the list argument has elements then check if 
             # information can flow from them to executing subject
             if len(arguments) > 0:
@@ -492,35 +524,44 @@ def perform_function_call(current_line, clearance, lbl_function):
             # create a new labelling function copying the labels of 
             # global variables from the current labelling function
             new_lbl_function = create_labelling_function()
+            logging.debug('New labelling function is created')
             # save the current line number to resume execution after 
             # the called function is executed
             saved_current_line = current_line
+            logging.debug('Saved current line is : %s' % saved_current_line)
             # set the current label with the line number where the function
             # is defined
             current_line = functions[function_name]
+            logging.debug('Function %s is defined at line number %s' %(function_name, current_line))
             # obtain the parameters defined in the function definition
             parameters, current_line = obtain_arguments(current_line)
+            logging.debug('Function parameters are %s'%arguments)
             # if length of both the parameters and arguments lists matches
             # then copy label of arguments into local list of new labelling
             # function
             if len(arguments) == len(parameters):
+                logging.debug('Length of arguments and parameters are same = %s' %len(arguments))
                 for i in range(len(arguments)):
                     if lbl_function.is_local(arguments[i]):
+                        logging.debug('Argument %s is local' % arguments[i])
                         parameter_label = lbl_function.label_from_local_list(arguments[i])     
                     elif lbl_function.is_global(arguments[i]):
+                        logging.debug('Argument %s is global' % arguments[i])
                         parameter_label = lbl_function.label_from_global_list(arguments[i])
                     else:
+                        logging.debug('Argument %s is not defined' % arguments[i])
                         parameter_label = Label(subject_label.get_owner(),
                                                     ['*'], [])
+                    logging.debug('Label of parameter %s is same as argument %s = %s' %(parameters[i], arguments[i], parameter_label.to_string()))
                     new_lbl_function.update_local_label_list(parameters[i], 
                                                                  parameter_label)
             else:
-                print('Function '+ function_name + ' : ' +
-                      'parameters do not match with arguments')
+                logging.warning('Function %s parameters do not match with arguments' % function_name)
                 sys.exit()
             # now execute each statement within the function until it
             # reaches the endfunc keyword
             while not is_end_of_function(lines[current_line]):
+                logging.debug('Executing the body of function %s' % function_name)
                 # if current line encounters a new statement
                 if is_a_statement(lines[current_line]):
                     new_lbl_function, current_line = DL(current_line,
@@ -528,6 +569,11 @@ def perform_function_call(current_line, clearance, lbl_function):
                                                         new_lbl_function)
                 else:
                     current_line = next_line(current_line)
+            logging.debug('Function %s execution completed' %function_name)
+            print('Derived labels of local variables from function: %s' % function_name)
+            print(new_lbl_function.print_local_labels())
+            logging.info('Derived labels of local variables from function: %s' % function_name)
+            logging.info('%s' % new_lbl_function.print_local_labels())
             # copy the downgrade list from new labelling function to old 
             # labelling function after the completion of function call
             # execution
@@ -536,6 +582,7 @@ def perform_function_call(current_line, clearance, lbl_function):
             # restore the saved current line to resume the execution after
             # the function is executed
             current_line = saved_current_line
+            logging.debug('Current line is now back to %s' %current_line)
             # return the labelling function and current label after
             # executing the Call statement
             return lbl_function, current_line
@@ -547,12 +594,12 @@ def perform_function_call(current_line, clearance, lbl_function):
             lbl_function.insert_into_downgrade_list(new_label)
             return lbl_function, current_line
         else:
-            print('Function ' + function_name + ' is not defined')
+            logging.warning('Function %s is not defined' % function_name)
             sys.exit()
     except Exception as e:
-        print('Function ' + inspect.stack()[0][3] + 
-                  ': fails in Call statement')
-        print(str(e))
+        logging.debug('Function %s fails in Call statement' % inspect.stack()[0][3] )
+        logging.warning('%s' %e)
+        logging.warning('****** Monitor Aborted ******')
         sys.exit()
 
 
@@ -566,75 +613,83 @@ def perform_return(current_line, clearance, lbl_function):
         lbl_function.make_downgrade_list_empty()
         # fetch the returned variables 
         variables, current_line = obtain_target_variables(current_line)
+        loggin.debug('Returning variables are %s'%variables)
         # now iterate the variables list and start downgrading label of each
         # variable inside the list
         for variable in variables:
             # if the variable is from local list
             if lbl_function.is_local(variable):
+                logging.debug('Local variable: %s' % variable)
                 variable_label = lbl_function.label_from_local_list(variable)
             # if the variable is from the global list
             elif lbl_function.is_global(variable):
+                logging.debug('Global variable: %s' % variable)
                 variable_label = lbl_function.label_from_global_list(variable)
+            logging.debug('Label of %s before downgrading %s' %(variable, variable_label))
             # new readers would be the principals already there in the writers
             # set for each variable
             new_readers = variable_label.get_writers()
             # downgrade the label of each variable and obtain the new label
-            new_label = flow_operations.downgrade(clearance, 
-                                                  clearance.get_owner(),
+            new_label = flow_operations.downgrade(clearance,
                                                   variable,
                                                   variable_label,
                                                   new_readers)
+            logging.debug('Label of %s after downgrading %s' %(variable, new_label))
             # insert the new label into the downgrade stack
             lbl_function.insert_into_downgrade_list(new_label)
             
         return lbl_function, current_line
     except Exception as e:
-        print('Function ' + inspect.stack()[0][3] + 
-                  ': fails in Call statement')
-        print(str(e))
+        logging.debug('Function %s: fails in Call statement'% inspect.stack()[0][3])
+        logging.warning('%s' %e)
+        logging.warning('****** Monitor Aborted ******')
         sys.exit()
 
+
+'''DL function responsible for calling appropriate function for labelling each
+kind of statement'''
+def DL(current_line, clearance, lbl_function):
+    logging.debug('current node: %s at line %s' %(lines[current_line], current_line))
+    # first check if it has already gone beyond the total length of the lines
+    if is_end_of_file(current_line):
+        return lbl_function, current_line 
+    # if the current line is an assignment statement
+    elif is_an_assignment(lines[current_line]):
+        return perform_assignment(current_line, clearance, lbl_function) 
+    # if the current line is a comparison statement   
+    elif is_a_comparison(lines[current_line]):
+        return perform_comparison(current_line, clearance, lbl_function)
+    # if the current line is an iteration statement i.e. "While"
+    elif is_an_iteration(lines[current_line]):
+        return perform_iteration(current_line, clearance, lbl_function)
+    # if the current line is a function call
+    elif is_a_function_call(lines[current_line]):
+        return perform_function_call(current_line, clearance, lbl_function)
+    # if the current line is a return statement
+    elif is_a_return(lines[current_line]):
+        return perform_return(current_line, clearance, lbl_function)
+    else:
+        return lbl_function, current_line
+        
 
 ''' This function is responsible to call the main DL function and provide the
 interface to be called by the main function for performing the labelling of
 program of interest'''
 def perform_labelling(filename, clearance, lbl_function):
-    
-    def DL(current_line, clearance, lbl_function):
-        # first check if it has already gone beyond the total length of the lines
-        if is_end_of_file(current_line):
-            return lbl_function, current_line 
-        # if the current line is an assignment statement
-        elif is_an_assignment(lines[current_line]):
-            return perform_assignment(current_line, clearance, lbl_function) 
-        # if the current line is a comparison statement   
-        elif is_a_comparison(lines[current_line]):
-            return perform_comparison(current_line, clearance, lbl_function)
-        # if the current line is an iteration statement i.e. "While"
-        elif is_an_iteration(lines[current_line]):
-            return perform_iteration(current_line, clearance, lbl_function)
-        # if the current line is a function call
-        elif is_a_function_call(lines[current_line]):
-            return perform_function_call(current_line, clearance, lbl_function)
-        # if the current line is a return statement
-        elif is_a_return(lines[current_line]):
-            return perform_return(current_line, clearance, lbl_function)
-        else:
-            return lbl_function, current_line
-
-
     with open(filename, 'r') as file:
         global lines
         lines = file.read().splitlines()
         current_line = 0
         while not is_end_of_file(current_line):
             if is_a_function_def(lines[current_line]):
+                logging.debug('current node: %s at line %s' %(lines[current_line], current_line))
                 current_line = next_line(current_line)
                 global functions
                 functions[get_the_id(current_line)] = current_line
                 # skip everything until the end of function is reached
                 while not is_end_of_function(lines[current_line]):
                     current_line = next_line(current_line)
+                logging.debug('current node: %s at line %s' %(lines[current_line], current_line))
             if is_a_statement(lines[current_line]):
                 lbl_function, current_line = DL(current_line,
                                                 clearance,

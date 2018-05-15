@@ -1,0 +1,114 @@
+INFO:root:
+
+*********** Monitor started **********
+
+
+INFO:root:Parsing inputs/input.json started
+INFO:root:program file name:inputs/test_3.py
+INFO:root:highest achievable label by the executing subject = A,['B'],['A', 'C']
+INFO:root:Parsing inputs/input.json is completed
+INFO:root:AST written into file: inputs/test_3.py.ast
+INFO:root:Given function labels are:
+foo : A,['B'],['A', 'C']
+
+INFO:root:Given global labels are:
+b : A,['B', 'D'],['C']
+a : A,['B'],['A', 'C']
+
+INFO:root:Starting dynamic labelling
+DEBUG:root:current node: While at line 0
+DEBUG:root:Save the starting line of loop is: 0
+DEBUG:root:New labelling function is created
+DEBUG:root:Old labelling function is copied into new labelling function
+DEBUG:root:Start executing the loop body at line 1
+DEBUG:root:current node: Compare at line 1
+DEBUG:root:Source variables of comparison statements are: ['c']
+DEBUG:root:Source variable c is a created with label A,['*'],[]
+DEBUG:root:PC label before reading c is PC,['*'],[]
+DEBUG:root:PC label after reading c is PC,['*'],[]
+DEBUG:root:current node: Assign at line 4
+DEBUG:root:Target variables of the assignment statement are: ['a']
+DEBUG:root:Source variables of the assignment statement are: ['c']
+DEBUG:root:Source variable c is a created with label A,['*'],[]
+DEBUG:root:PC label before reading c is PC,['*'],[]
+DEBUG:root:PC label after reading c is PC,['*'],[]
+DEBUG:root:Updated PC label PC,['*'],[]
+DEBUG:root:Label of target a is a given as A,['B'],['A', 'C']
+DEBUG:root:current node: Compare at line 7
+DEBUG:root:Source variables of comparison statements are: ['c']
+DEBUG:root:Source variable c is a created with label A,['*'],[]
+DEBUG:root:PC label before reading c is PC,['*'],[]
+DEBUG:root:PC label after reading c is PC,['*'],[]
+DEBUG:root:current node: Assign at line 10
+DEBUG:root:Target variables of the assignment statement are: ['c']
+DEBUG:root:Source variables of the assignment statement are: ['d']
+DEBUG:root:Source variable d is a created with label A,['*'],[]
+DEBUG:root:PC label before reading d is PC,['*'],[]
+DEBUG:root:PC label after reading d is PC,['*'],[]
+DEBUG:root:Updated PC label PC,['*'],[]
+DEBUG:root:Target c is a new variable created with label A,['*'],[]
+DEBUG:root:current node: Assign at line 13
+DEBUG:root:Target variables of the assignment statement are: ['c']
+DEBUG:root:Source variables of the assignment statement are: ['b']
+DEBUG:root:Source variable b is a global having label A,['B', 'D'],['C']
+DEBUG:root:PC label before reading b is PC,['*'],[]
+DEBUG:root:PC label after reading b is PC,['B', 'D'],['C']
+DEBUG:root:Updated PC label PC,['B', 'D'],['C']
+DEBUG:root:Old label of target c is A,['*'],[]
+DEBUG:root:New label of target c is A,['B', 'D'],['C']
+DEBUG:root:Stop executing the loop body at line 16
+DEBUG:root:New labels are not same as old labels
+DEBUG:root:Restore the starting line of loop is 0
+DEBUG:root:current node: While at line 0
+DEBUG:root:Save the starting line of loop is: 0
+DEBUG:root:New labelling function is created
+DEBUG:root:Old labelling function is copied into new labelling function
+DEBUG:root:Start executing the loop body at line 1
+DEBUG:root:current node: Compare at line 1
+DEBUG:root:Source variables of comparison statements are: ['c']
+DEBUG:root:Source variable c is a local having label A,['B', 'D'],['C']
+DEBUG:root:PC label before reading c is PC,['B', 'D'],['C']
+DEBUG:root:PC label after reading c is PC,['B', 'D'],['C']
+DEBUG:root:current node: Assign at line 4
+DEBUG:root:Target variables of the assignment statement are: ['a']
+DEBUG:root:Source variables of the assignment statement are: ['c']
+DEBUG:root:Source variable c is a local having label A,['B', 'D'],['C']
+DEBUG:root:PC label before reading c is PC,['B', 'D'],['C']
+DEBUG:root:PC label after reading c is PC,['B', 'D'],['C']
+DEBUG:root:Updated PC label PC,['B', 'D'],['C']
+DEBUG:root:Label of target a is a given as A,['B'],['A', 'C']
+DEBUG:root:current node: Compare at line 7
+DEBUG:root:Source variables of comparison statements are: ['c']
+DEBUG:root:Source variable c is a local having label A,['B', 'D'],['C']
+DEBUG:root:PC label before reading c is PC,['B', 'D'],['C']
+DEBUG:root:PC label after reading c is PC,['B', 'D'],['C']
+DEBUG:root:current node: Assign at line 10
+DEBUG:root:Target variables of the assignment statement are: ['c']
+DEBUG:root:Source variables of the assignment statement are: ['d']
+DEBUG:root:Source variable d is a created with label A,['*'],[]
+DEBUG:root:PC label before reading d is PC,['B', 'D'],['C']
+DEBUG:root:PC label after reading d is PC,['B', 'D'],['C']
+DEBUG:root:Updated PC label PC,['B', 'D'],['C']
+DEBUG:root:Old label of target c is A,['B', 'D'],['C']
+DEBUG:root:New label of target c is A,['B', 'D'],['C']
+DEBUG:root:current node: Assign at line 13
+DEBUG:root:Target variables of the assignment statement are: ['c']
+DEBUG:root:Source variables of the assignment statement are: ['b']
+DEBUG:root:Source variable b is a global having label A,['B', 'D'],['C']
+DEBUG:root:PC label before reading b is PC,['B', 'D'],['C']
+DEBUG:root:PC label after reading b is PC,['B', 'D'],['C']
+DEBUG:root:Updated PC label PC,['B', 'D'],['C']
+DEBUG:root:Old label of target c is A,['B', 'D'],['C']
+DEBUG:root:New label of target c is A,['B', 'D'],['C']
+DEBUG:root:Stop executing the loop body at line 16
+DEBUG:root:New labels are same as old labels
+INFO:root:Dynamic labelling completed
+INFO:root:Derived labels of local variables from main file:
+INFO:root:c : A,['B', 'D'],['C']
+
+INFO:root:Program is information flow secure
+INFO:root:
+
+*********** Monitor stopped **********
+
+
