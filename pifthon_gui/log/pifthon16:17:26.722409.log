@@ -1,0 +1,58 @@
+INFO:root:
+
+*********** Monitor started **********
+
+
+INFO:root:Parsing inputs/assign1.py started
+INFO:root:program file name:inputs/assign1.py
+INFO:root:highest achievable label by the executing subject = A,B,C,['*'],['']
+INFO:root:Parsing assign1 is completed
+INFO:root:AST written into file: inputs/assign1.py.ast
+INFO:root:Given function labels are:
+Not Given
+INFO:root:Given global labels are:
+Not Given
+INFO:root:Given output files are:
+Not Given
+INFO:root:Starting dynamic labelling
+DEBUG:root:Starting the function current node: FunctionDef at line 0
+DEBUG:root:Ending the function current node: endfunc at line 6
+DEBUG:root:current node: Assign at line 7
+DEBUG:root:Target variables of the assignment statement are: ['a']
+DEBUG:root:current node: Call at line 9
+DEBUG:root:Function name: main
+DEBUG:root:Function is executed with subject label A,B,C,['*'],['']
+DEBUG:root:Function arguments are []
+DEBUG:root:New labelling function is created
+DEBUG:root:Saved current line is : 12
+DEBUG:root:Function main is defined at line number 1
+DEBUG:root:Function parameters are []
+DEBUG:root:Length of arguments and parameters are same = 0
+DEBUG:root:Starting Execution of the body of function main
+DEBUG:root:current node: Assign at line 2
+DEBUG:root:Target variables of the assignment statement are: ['c']
+DEBUG:root:Source variables of the assignment statement are: ['a', 'b']
+DEBUG:root:Source Variable a is created with label A,B,C,['*'],[]
+DEBUG:root:Source Variable b is created with label A,B,C,['*'],[]
+DEBUG:root:Updated PC label PC,['*'],[]
+DEBUG:root:Target c is a new variable created with label A,B,C,['*'],[]
+DEBUG:root:All the return statements have been read
+DEBUG:root:Checking if the labels in the downgrade list can flow to the function main
+DEBUG:root:Function main execution completed
+INFO:root:Derived labels of local variables from function: main
+INFO:root:c : A,B,C,['*'],[]
+
+DEBUG:root:Current line is now back to 12
+DEBUG:root:Updated PC label PC,['*'],[]
+DEBUG:root:Target a is a new variable created with label A,B,C,['*'],[]
+INFO:root:Dynamic labelling completed
+INFO:root:Table deleted from the database
+INFO:root:Derived labels of local variables from main file:
+INFO:root:a : A,B,C,['*'],[]
+
+INFO:root:Program is information flow secure
+INFO:root:
+
+*********** Monitor stopped **********
+
+
