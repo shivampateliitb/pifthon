@@ -1,4 +1,5 @@
 from rwfm.Label import *
+import logging
 
 def can_flow(from_label, to_label):
 	'''Function checks if from_label can flow to to_label and return true
@@ -29,10 +30,10 @@ def downgrade(subject_label, object, object_label, principals):
 			object_label.insert_into_readers(principals)
 			return object_label
 		else:
-			print('downgrade(%s, %s)  error: new readers are not the current writers of %s' 
+			logging.debug('downgrade(%s, %s)  error: new readers are not the current writers of %s' 
 			 	%(object, principals, object))
 			return None
 	else:
-		print('downgrade(%s, %s)  error: owner is not the owner of the object' 
+		logging.debug('downgrade(%s, %s)  error: owner is not the owner of the object' 
 			 %(object, principals))
 		return None

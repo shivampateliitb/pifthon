@@ -76,6 +76,24 @@ def parse_function_labels(json_file):
     else:
         return _functions
 
+def parse_output_file(json_file):
+    _input_data = json.load(open(json_file))
+    _output_file = {}
+    try:
+        for file in _input_data["source_file"]["outputfile"]:
+            _name = file["name"]
+            _owner = parse_owner(file["label"])
+            _readers = parse_readers(file["label"])
+            _writers = parse_writers(file["label"])
+            _label = Label(_owner, _readers, _writers)
+            _output_file[_name] = _label
+    except KeyError as e:
+        return None
+    else:
+        return _output_file
+
+
+
 
 # def print_globals(globals):
 #     str=''
