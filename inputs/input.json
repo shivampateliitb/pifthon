@@ -58,7 +58,25 @@
                         ]
                     }
                 }
-            ]
+            ],
+
+            "outputfile":[
+                    
+                {
+                    "name":"print_file",
+                    "label": {
+                            "owner" : "A",
+                            "readers": [
+                                    {"id": "D"},
+                                    {"id": "B"},
+                                    {"id": "C"}
+                                ],
+                            "writers": [
+                                    {"id": "B"}
+                                ]
+                        }
+                    }     
+            ] 
     }
             
 }
