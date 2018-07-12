@@ -1,0 +1,90 @@
+INFO:root:
+
+*********** Monitor started **********
+
+
+INFO:root:Parsing inputs/declassify1.py started
+INFO:root:program file name:inputs/declassify1.py
+INFO:root:highest achievable label by the executing subject = A, B, C,['*'],['']
+INFO:root:Parsing declassify1 is completed
+INFO:root:AST written into file: inputs/declassify1.py.ast
+INFO:root:Given function labels are:
+Not Given
+INFO:root:Given global labels are:
+Not Given
+INFO:root:Given output files are:
+Not Given
+INFO:root:Starting dynamic labelling
+DEBUG:root:Starting the function current node: FunctionDef at line 0
+DEBUG:root:Ending the function current node: endfunc at line 18
+DEBUG:root:current node: Assign at line 19
+DEBUG:root:Target variables of the assignment statement are: ['c', 'e']
+DEBUG:root:current node: Call at line 24
+DEBUG:root:Function name: foo
+DEBUG:root:Function is executed with subject label A, B, C,['*'],['']
+DEBUG:root:Function arguments are ['6', 'b', 'a']
+DEBUG:root:reading arguments
+DEBUG:root:New labelling function is created
+DEBUG:root:Saved current line is : 30
+DEBUG:root:Function foo is defined at line number 1
+DEBUG:root:Function parameters are ['m', 'e', 'f']
+DEBUG:root:Length of arguments and parameters are same = 3
+DEBUG:root:Argument 6 is not defined
+DEBUG:root:Label of parameter m after reading the argument 6 is A, B, C,['*'],[]
+DEBUG:root:Function PC label before reading parameter m is PC,['*'],[]
+DEBUG:root:Function PC label after reading parameter m is PC,['*'],[]
+DEBUG:root:Argument b is not defined
+DEBUG:root:Label of parameter e after reading the argument b is A, B, C,['*'],[]
+DEBUG:root:Function PC label before reading parameter e is PC,['*'],[]
+DEBUG:root:Function PC label after reading parameter e is PC,['*'],[]
+DEBUG:root:Argument a is not defined
+DEBUG:root:Label of parameter f after reading the argument a is A, B, C,['*'],[]
+DEBUG:root:Function PC label before reading parameter f is PC,['*'],[]
+DEBUG:root:Function PC label after reading parameter f is PC,['*'],[]
+DEBUG:root:Starting Execution of the body of function foo
+DEBUG:root:current node: Compare at line 5
+DEBUG:root:Source variables of comparison statements are: ['m', '6']
+DEBUG:root:Source Variable m is a local having label A, B, C,['*'],[]
+DEBUG:root:Source Variable 6 is created with label A, B, C,['*'],[]
+DEBUG:root:current node: Return at line 8
+DEBUG:root:Returning variables are ['n', 'a']
+DEBUG:root:Label of n before downgrading A, B, C,['*'],[]
+DEBUG:root:Label of n after downgrading A, B, C,['*'],[]
+DEBUG:root:Label of a before downgrading A, B, C,['*'],[]
+DEBUG:root:Label of a after downgrading A, B, C,['*'],[]
+DEBUG:root:current node: Return at line 13
+DEBUG:root:Returning variables are ['a', 'b']
+DEBUG:root:Label of a before downgrading A, B, C,['*'],[]
+DEBUG:root:Label of a after downgrading A, B, C,['*'],[]
+DEBUG:root:Label after joining label in the list A, B, C,['*'],[] and new downgraded label A, B, C,['*'],[] is below :
+DEBUG:root: A, B, C,['*'],[]
+DEBUG:root:Label of b before downgrading A, B, C,['*'],[]
+DEBUG:root:Label of b after downgrading A, B, C,['*'],[]
+DEBUG:root:Label after joining label in the list A, B, C,['*'],[] and new downgraded label A, B, C,['*'],[] is below :
+DEBUG:root: A, B, C,['*'],[]
+DEBUG:root:All the return statements have been read
+DEBUG:root:Checking if the labels in the downgrade list can flow to the function foo
+DEBUG:root:The label A, B, C,['*'],[] of return value at place 0 can flow to function foo
+DEBUG:root:The label A, B, C,['*'],[] of return value at place 1 can flow to function foo
+DEBUG:root:Function foo execution completed
+INFO:root:Derived labels of local variables from function: foo
+INFO:root:m : A, B, C,['*'],[]
+e : A, B, C,['*'],[]
+f : A, B, C,['*'],[]
+
+DEBUG:root:Current line is now back to 30
+DEBUG:root:Updated PC label PC,['*'],[]
+DEBUG:root:Target c is a new variable created with label A, B, C,['*'],[]
+DEBUG:root:Target e is a new variable created with label A, B, C,['*'],[]
+INFO:root:Dynamic labelling completed
+INFO:root:Table deleted from the database
+INFO:root:Derived labels of local variables from main file:
+INFO:root:c : A, B, C,['*'],[]
+e : A, B, C,['*'],[]
+
+INFO:root:Program is information flow secure
+INFO:root:
+
+*********** Monitor stopped **********
+
+
