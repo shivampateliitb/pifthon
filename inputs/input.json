@@ -1,60 +1,65 @@
 {
     "source_file":
     {
-            "path": "inputs/test_0.py",
+            "path": "inputs/vickery.py",
             
             "label": {
-                "owner" : "A",
+                "owner" : "C",
                 "readers": [
-                    {"id":"B"}
+                    
+                    {"id":"C"}
+
                 ],
                 "writers": [
-                    {"id": "A"},
-                    {"id":"C"}
+                    {"id": "C"},
+                    {"id":"B"},
+                    {"id":"A"}
                 ]
             },
             
             "function_label": [
-                {
-                    "name":"foo",
-                    "label": {
-                        "owner" : "A",
-                        "readers": [
-                            {"id":"B"}
-                        ],
-                        "writers": [
-                            {"id": "A"},
-                            {"id": "C"}
-                        ]
-                    }
-                }
             ],
             
             "global_vars": [
+
                 {
-                    "id":"a",
+                    "id":"winner",
                     "label": {
-                        "owner" : "A",
+                        "owner" : "C",
                         "readers": [
-                            {"id":"B"},
-                            {"id":"D"}
+                            {"id": "A"},
+                            {"id": "B"},
+                            {"id": "C"}
                         ],
                         "writers": [
                             {"id": "A"},
-                            {"id": "C"}
+                            {"id": "B"}
                         ]
                     }
                 },
-
                 {
-                    "id":"b",
+                    "id":"bidA",
                     "label": {
                         "owner" : "A",
                         "readers": [
-                            {"id":"B"}
+                            {"id": "A"},
+                            {"id": "C"}
                         ],
                         "writers": [
-                            {"id": "C"}
+                            {"id": "A"}
+                        ]
+                    }
+                },
+                {
+                    "id":"bidB",
+                    "label": {
+                        "owner" : "B",
+                        "readers": [
+                            {"id": "B"},
+                            {"id": "C"}                         
+                        ],
+                        "writers": [
+                           {"id": "B"} 
                         ]
                     }
                 }

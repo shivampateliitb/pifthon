@@ -1186,39 +1186,50 @@ def perform_downgrading(current_line, clearance, lbl_function):
         logging.debug('current node: %s at line %s' %(lines[current_line], current_line))
         # at this point current line is calling the downgrading, hence 
         # move to next line to fetch its arguments
-        current_line = next_line(current_line)
+        current_line = next_line(next_line(current_line))
         # in the next three iteration get the owner, object label and
         # list of principals to be added in the downgraded label
-        for i in range(2):
+        for i in range(3):
             if i == 0:
                 object_name = lines[current_line].split(':')[1]
-                if lbl_function.is_local(object):
+                if lbl_function.is_local(object_name):
                     logging.debug('Variable %s has a dynamic label'%object_name)
                     object_label = lbl_function.label_from_local_list(object_name)
                 else:
                     logging.debug('Variable %s has a fixed label'%object_name)
                     object_label = lbl_function.label_from_global_list(object_name)
+            elif i == 1:
+                new_object_name = lines[current_line].split(':')[1]
             else:
                 new_readers = lines[current_line].split(':')[1].split(',')
             current_line = next_line(current_line)
-        logging.debug('Variable %s having label %s is going to be downgraded to %s'%(object_name, object_label.to_string(), new_readers))
+        
+        logging.debug('Variable %s having label %s is going to be downgraded to %s'%(new_object_name, object_label.to_string(), new_readers))
         # make target label same as object label only with added readers
         target_label = Label(object_label.get_owner(),
                              object_label.get_readers(),
                              object_label.get_writers())
+        
         target_label.insert_into_readers(new_readers)
         # now call downgrade operation
         new_label = flow_operations.downgrade(clearance, 
-                                              object_name,
-                                              object_label, 
+                                              new_object_name,
+                                              target_label, 
                                               new_readers)
         
         # downgrading is successfull if:    
         # if object label is global then check if new label and object label is same
         # otherwise if new label and target label is same and new label is not none
+        
         if (lbl_function.is_global(object_name) and new_label.is_equal_to(object_label)) \
         or (not new_label == None and new_label.is_equal_to(target_label)):
-            logging.debug('New label of variable %s is %s' %(object_name, new_label.to_string()))
+            logging.debug('New label of variable %s is %s' %(new_object_name, new_label.to_string()))
+            if lbl_function.is_global(new_object_name):
+                global_label = lbl_function.label_from_global_list(new_object_name)
+                print(global_label.to_string())
+                if flow_operations.can_flow(new_label, global_label):
+                    logging.info("Label of %s :%s can flow into label of global %s: %s"%(object_name, new_label.to_string(), new_object_name, global_label.to_string()))
+                    object_label = target_label
             return new_label, current_line
         else:
             error_type = 2
@@ -1227,6 +1238,10 @@ def perform_downgrading(current_line, clearance, lbl_function):
                                  "", 
                                  object_label, 
                                  target_label)
+        global_label = lbl_function.label_from_global_list(global_object_name)
+        print(global_label.to_string())
+        if flow_operations.can_flow(new_label, global_label):
+            logging.info("Label of %s :%s can flow into label of %s: %s"%(new_object_name, new_label.to_string(), global_object_name, global_label.to_string()))
             
     except Exception as e:
         logging.debug('Function %s : fails during downgrading' %inspect.stack()[0][3])
