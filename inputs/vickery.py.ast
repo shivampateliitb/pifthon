@@ -25,7 +25,7 @@ Call
 func:downgrade
 func_arg_open:
 arg:result
-arg:result2
+arg:result
 arg:A,B
 func_arg_close:
 endfunc

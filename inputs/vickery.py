@@ -6,7 +6,7 @@ def m():
 	else:
 		result = openA
 
-	downgrade(result, result2, ['A', 'B'])
+	downgrade(result, result, ['A', 'B'])
 
 
 def getbidA():

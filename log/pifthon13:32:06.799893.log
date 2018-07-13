@@ -1,9 +1,0 @@
-INFO:root:
-
-*********** Monitor started **********
-
-
-INFO:root:Parsing inputs/input.json started
-INFO:root:program file name:inputs/test_0.py
-INFO:root:highest achievable label by the executing subject = A,['B'],['A', 'C']
-INFO:root:Parsing inputs/input.json is completed
