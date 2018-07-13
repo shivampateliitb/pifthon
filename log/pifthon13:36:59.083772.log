@@ -1,0 +1,9 @@
+INFO:root:
+
+*********** Monitor started **********
+
+
+INFO:root:Parsing inputs/input.json started
+INFO:root:program file name:inputs/vickery.py
+INFO:root:highest achievable label by the executing subject = C,['C'],['C', 'B', 'A']
+INFO:root:Parsing inputs/input.json is completed

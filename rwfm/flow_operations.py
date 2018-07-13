@@ -15,7 +15,7 @@ def can_flow(from_label, to_label):
 		return False
 	
 	
-def downgrade(subject_label, object, object_label, principals):
+def downgrade(subject_label, object_name, object_label, principals):
 	'''Downgrade function declassifies the label of an object and return the declassified label and a boolean
 	value indicating a successful downgrading''' 
 	# If owner of the subject label executing the operation is not the owner
@@ -24,16 +24,17 @@ def downgrade(subject_label, object, object_label, principals):
 		# If the set principals is a subset of writers set of object_label 
 		# or If owner is the sole writer  of object_label then also return 
 		# True then return True
-		if set(principals).issubset(object_label.get_writers()) \
-		or object_label.get_writers() == list(subject_label.get_owner()):
+		if set(principals).issubset(set(object_label.get_writers())) \
+		or set(object_label.get_writers()) == list(set(subject_label.get_owner())) \
+		or set(principals) == set(object_label.get_writers()):
 			# Update the readers set of object_label
 			object_label.insert_into_readers(principals)
 			return object_label
 		else:
 			logging.debug('downgrade(%s, %s)  error: new readers are not the current writers of %s' 
-			 	%(object, principals, object))
+			 	%(object_name, principals, object_name))
 			return None
 	else:
 		logging.debug('downgrade(%s, %s)  error: owner is not the owner of the object' 
-			 %(object, principals))
+			 %(object_name, principals))
 		return None

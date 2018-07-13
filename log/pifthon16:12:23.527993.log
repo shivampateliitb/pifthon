@@ -1,0 +1,141 @@
+INFO:root:
+
+*********** Monitor started **********
+
+
+INFO:root:Parsing inputs/input.json started
+INFO:root:program file name:inputs/vickery.py
+INFO:root:highest achievable label by the executing subject = C,['C'],['C', 'B', 'A']
+INFO:root:Parsing inputs/input.json is completed
+INFO:root:AST written into file: inputs/vickery.py.ast
+INFO:root:Given function labels are:
+Not Given
+INFO:root:Given global labels are:
+winner : C,['A', 'B', 'C'],['A', 'B']
+bidA : A,['A', 'C'],['A']
+bidB : B,['B', 'C'],['B']
+
+INFO:root:Given output files are:
+print_file : A,['D', 'B', 'C'],['B']
+
+INFO:root:Starting dynamic labelling
+DEBUG:root:Starting the function current node: FunctionDef at line 0
+DEBUG:root:Ending the function current node: endfunc at line 31
+DEBUG:root:Starting the function current node: FunctionDef at line 32
+DEBUG:root:Ending the function current node: endfunc at line 39
+DEBUG:root:Starting the function current node: FunctionDef at line 40
+DEBUG:root:Ending the function current node: endfunc at line 47
+DEBUG:root:current node: Call at line 48
+DEBUG:root:Function name: m
+DEBUG:root:Function is executed with subject label C,['C'],['C', 'B', 'A']
+DEBUG:root:Function arguments are []
+DEBUG:root:New labelling function is created
+DEBUG:root:Saved current line is : 51
+DEBUG:root:Function m is defined at line number 1
+DEBUG:root:Function parameters are []
+DEBUG:root:Length of arguments and parameters are same = 0
+DEBUG:root:Starting Execution of the body of function m
+DEBUG:root:current node: Assign at line 2
+DEBUG:root:Target variables of the assignment statement are: ['openA']
+DEBUG:root:current node: Call at line 4
+DEBUG:root:Function name: getbidA
+DEBUG:root:Function is executed with subject label C,['C'],['C', 'B', 'A']
+DEBUG:root:Function arguments are []
+DEBUG:root:New labelling function is created
+DEBUG:root:Saved current line is : 7
+DEBUG:root:Function getbidA is defined at line number 33
+DEBUG:root:Function parameters are []
+DEBUG:root:Length of arguments and parameters are same = 0
+DEBUG:root:Starting Execution of the body of function getbidA
+DEBUG:root:current node: Assign at line 34
+DEBUG:root:Target variables of the assignment statement are: ['bidA']
+DEBUG:root:Source variables of the assignment statement are: ['10']
+DEBUG:root:Source Variable 10 is created with label C,['*'],[]
+DEBUG:root:Updated PC label PC,['*'],[]
+DEBUG:root:Label of target bidA is a given as A,['A', 'C'],['A']
+DEBUG:root:current node: Return at line 37
+DEBUG:root:Returning variables are ['bidA']
+DEBUG:root:Global variable: bidA
+DEBUG:root:Label of bidA before downgrading A,['A', 'C'],['A']
+DEBUG:root:All the return statements have been read
+DEBUG:root:Checking if the labels in the downgrade list can flow to the function getbidA
+DEBUG:root:The label A,['A', 'C'],['A'] of return value at place 0 can flow to function getbidA
+DEBUG:root:Function getbidA execution completed
+INFO:root:Derived labels of local variables from function: getbidA
+INFO:root:
+DEBUG:root:Current line is now back to 7
+DEBUG:root:Updated PC label PC,['A', 'C'],['A']
+DEBUG:root:Target openA is a new variable created with label C,['A', 'C'],['A']
+DEBUG:root:current node: Assign at line 8
+DEBUG:root:Target variables of the assignment statement are: ['openB']
+DEBUG:root:current node: Call at line 10
+DEBUG:root:Function name: getbidB
+DEBUG:root:Function is executed with subject label C,['C'],['C', 'B', 'A']
+DEBUG:root:Function arguments are []
+DEBUG:root:New labelling function is created
+DEBUG:root:Saved current line is : 13
+DEBUG:root:Function getbidB is defined at line number 41
+DEBUG:root:Function parameters are []
+DEBUG:root:Length of arguments and parameters are same = 0
+DEBUG:root:Starting Execution of the body of function getbidB
+DEBUG:root:current node: Assign at line 42
+DEBUG:root:Target variables of the assignment statement are: ['bidB']
+DEBUG:root:Source variables of the assignment statement are: ['15']
+DEBUG:root:Source Variable 15 is created with label C,['*'],[]
+DEBUG:root:Updated PC label PC,['*'],[]
+DEBUG:root:Label of target bidB is a given as B,['B', 'C'],['B']
+DEBUG:root:current node: Return at line 45
+DEBUG:root:Returning variables are ['bidB']
+DEBUG:root:Global variable: bidB
+DEBUG:root:Label of bidB before downgrading B,['B', 'C'],['B']
+DEBUG:root:All the return statements have been read
+DEBUG:root:Checking if the labels in the downgrade list can flow to the function getbidB
+DEBUG:root:The label B,['B', 'C'],['B'] of return value at place 0 can flow to function getbidB
+DEBUG:root:Function getbidB execution completed
+INFO:root:Derived labels of local variables from function: getbidB
+INFO:root:
+DEBUG:root:Current line is now back to 13
+DEBUG:root:Updated PC label PC,['C'],['A', 'B']
+DEBUG:root:Target openB is a new variable created with label C,['C'],['A', 'B']
+DEBUG:root:current node: Compare at line 14
+DEBUG:root:Source variables of comparison statements are: ['openA', 'openB']
+DEBUG:root:Source Variable openA is a local having label C,['A', 'C'],['A']
+DEBUG:root:Source Variable openB is a local having label C,['C'],['A', 'B']
+DEBUG:root:current node: Assign at line 17
+DEBUG:root:Target variables of the assignment statement are: ['result']
+DEBUG:root:Source variables of the assignment statement are: ['openB']
+DEBUG:root:Source Variable openB is a local having label C,['C'],['A', 'B']
+DEBUG:root:Updated PC label PC,['C'],['A', 'B']
+DEBUG:root:Target result is a new variable created with label C,['C'],['A', 'B']
+DEBUG:root:current node: Assign at line 20
+DEBUG:root:Target variables of the assignment statement are: ['result']
+DEBUG:root:Source variables of the assignment statement are: ['openA']
+DEBUG:root:Source Variable openA is a local having label C,['A', 'C'],['A']
+DEBUG:root:Updated PC label PC,['C'],['A', 'B']
+DEBUG:root:Old label of target result is C,['C'],['A', 'B']
+DEBUG:root:New label of target result is C,['C'],['A', 'B']
+DEBUG:root:current node: Call at line 23
+DEBUG:root:Function name: downgrade
+DEBUG:root:current node: func:downgrade at line 24
+DEBUG:root:Variable result has a dynamic label
+DEBUG:root:Variable result2 having label C,['C'],['A', 'B'] is going to be downgraded to ['A', 'B']
+DEBUG:root:New label of variable result is C,['A', 'C', 'B'],['A', 'B']
+DEBUG:root:All the return statements have been read
+DEBUG:root:Checking if the labels in the downgrade list can flow to the function m
+DEBUG:root:The label C,['A', 'C', 'B'],['A', 'B'] of return value at place 0 can flow to function m
+DEBUG:root:Function m execution completed
+INFO:root:Derived labels of local variables from function: m
+INFO:root:openA : C,['A', 'C'],['A']
+openB : C,['C'],['A', 'B']
+result : C,['A', 'C', 'B'],['A', 'B']
+
+DEBUG:root:Current line is now back to 51
+INFO:root:Dynamic labelling completed
+INFO:root:Derived labels of local variables from main file:
+INFO:root:
+INFO:root:Program is information flow secure
+INFO:root:
+
+*********** Monitor stopped **********
+
+
